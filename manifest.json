@@ -1,6 +1,6 @@
 {
-  "version": "4acc7e8",
-  "builtAt": "2026-09-21T14:23:55.945Z",
+  "version": "19181df",
+  "builtAt": "2026-09-21T14:26:50.104Z",
   "blocks": [
     {
       "id": "collection-banner",
@@ -488,11 +488,6 @@
           "name": "take",
           "type": "number",
           "default": 12
-        },
-        {
-          "name": "variant",
-          "type": "'default' | 'inverted'",
-          "default": "default"
         }
       ],
       "thumbnail": "thumb.png",

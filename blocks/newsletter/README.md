@@ -9,17 +9,30 @@ area, or a newsletter section on a campaign page.
 **Wiring `action`** (required)
 
 The four storefronts already have a newsletter server action at
-`@/components/layout/newsletter-actions` (used by `layout/newsletter-form.tsx`). In the
-page, import it and pass it through; adapt its return value to `{ ok, message? }` in a
-small wrapper if the shapes differ:
+`@/components/layout/newsletter-actions` (used by `layout/newsletter-form.tsx`):
+`subscribeNewsletter(prevState, formData)` returning `{ done, success?, error? }`, reading
+the fields `namn`, `epost`, `location` and the honeypot `website`. Read it first (a site
+may differ), then wrap it in the page so the block's `email` field maps onto it:
 
 ```tsx
-import { subscribeToNewsletter } from '@/components/layout/newsletter-actions';
-<Newsletter action={async (fd) => { 'use server'; const r = await subscribeToNewsletter(fd); return { ok: r.success, message: r.message }; }} />
+// in the page (a server component)
+import { subscribeNewsletter } from '@/components/layout/newsletter-actions';
+
+async function subscribe(fd: FormData) {
+  'use server';
+  const mapped = new FormData();
+  mapped.set('epost', String(fd.get('email') ?? ''));
+  mapped.set('namn', '');
+  mapped.set('location', 'block:newsletter');
+  const r = await subscribeNewsletter({ done: false }, mapped);
+  return { ok: Boolean(r.success), message: r.error };
+}
+
+<Newsletter action={subscribe} />
 ```
 
-Read the existing action first; its field name may not be `email`. Never write a new
-subscription backend for this block and never post to a third-party URL from the client.
+Never write a new subscription backend for this block and never post to a third-party
+URL from the client.
 
 **Props**
 

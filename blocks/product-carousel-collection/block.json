@@ -5,13 +5,38 @@
   "category": "commerce",
   "tier": "shop",
   "summary": "Ett svepbart band med produkter från en vald kategori, med sajtens egen produktkarusell.",
-  "files": [{ "path": "product-carousel-collection.tsx", "target": "src/components/blocks/product-carousel-collection.tsx" }],
-  "uses": { "ui": [], "packages": ["@nicgo101/storefront-commerce", "next"], "site": ["@/components/commerce/product-carousel"] },
+  "files": [
+    {
+      "path": "product-carousel-collection.tsx",
+      "target": "src/components/blocks/product-carousel-collection.tsx"
+    }
+  ],
+  "uses": {
+    "ui": [],
+    "packages": [
+      "@nicgo101/storefront-commerce",
+      "next"
+    ],
+    "site": [
+      "@/components/commerce/product-carousel"
+    ]
+  },
   "props": [
-    { "name": "slug", "type": "string", "required": true },
-    { "name": "title", "type": "string", "required": true },
-    { "name": "take", "type": "number", "default": 12 },
-    { "name": "variant", "type": "'default' | 'inverted'", "default": "default" }
+    {
+      "name": "slug",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "take",
+      "type": "number",
+      "default": 12
+    }
   ],
   "thumbnail": "thumb.png"
 }

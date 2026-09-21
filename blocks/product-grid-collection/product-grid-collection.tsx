@@ -44,8 +44,9 @@ export default async function ProductGridCollection({ slug, title = null, text, 
         {title ? <h2 className="text-3xl font-bold tracking-tight text-foreground">{title}</h2> : null}
         {text ? <p className="mt-2 max-w-2xl text-muted-foreground">{text}</p> : null}
         <ul className={`grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 ${title || text ? 'mt-8' : ''}`}>
-          {/* Items are masked fragments (gql.tada): fields are read inside ProductCard, so the key is the position. */}
-          {products.map((p, i) => <li key={i}><ProductCard product={p} index={i} /></li>)}
+          {/* Items are masked fragments (gql.tada): fields are read inside ProductCard, so the key is
+              the position. Only `product` is passed: pv's card has no `index`, gm's defaults it. */}
+          {products.map((p, i) => <li key={i}><ProductCard product={p} /></li>)}
         </ul>
         {href ? (
           <div className="mt-8 text-center">

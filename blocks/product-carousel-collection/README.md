@@ -11,8 +11,10 @@ second product row where a grid would be too tall. For a static grid use
 
 - `@nicgo101/storefront-commerce` in the site's `package.json`
 - `src/components/commerce/product-carousel.tsx` exporting
-  `ProductCarousel({ title, products, variant? })` (all four storefronts have it; read it,
-  the `variant` values differ per site and `title` is required there)
+  `ProductCarousel({ title, products, variant? })` (all four storefronts have it; `title`
+  is required there, and the `variant` values differ per site: va has `inverted`, gm and
+  pv have `chalkboard`, so the block passes none. Add one in the copy if the owner wants
+  the alternate look.)
 - a Vendure shop-api behind the site
 
 **The slug**: see `product-grid-collection`. Unknown slug → the block renders `null`.
@@ -24,7 +26,6 @@ second product row where a grid would be too tall. For a static grid use
 | `slug` | string | required |
 | `title` | string | required; the site's carousel renders it as its heading |
 | `take` | number | default 12 |
-| `variant` | `'default' \| 'inverted'` | passed through; remove the prop in the copy if the site's carousel has no `variant` |
 
 **Caching** is the same as `product-grid-collection`: keep the `'use cache'` scope with
 the catch inside it.

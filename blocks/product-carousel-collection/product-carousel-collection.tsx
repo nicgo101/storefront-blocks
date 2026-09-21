@@ -10,8 +10,6 @@ export type ProductCarouselCollectionProps = {
   title: string;
   /** Number of products, default 12. */
   take?: number;
-  /** Passed through to the site's carousel when it supports it. */
-  variant?: 'default' | 'inverted';
 };
 
 async function getCollectionProducts(slug: string, take: number) {
@@ -28,8 +26,10 @@ async function getCollectionProducts(slug: string, take: number) {
   }
 }
 
-export default async function ProductCarouselCollection({ slug, title, take = 12, variant = 'default' }: ProductCarouselCollectionProps) {
+// The site's carousel has its own `variant` values (va: 'inverted', gm/pv: 'chalkboard');
+// the block passes none so the same file compiles everywhere. Add one in the copy if wanted.
+export default async function ProductCarouselCollection({ slug, title, take = 12 }: ProductCarouselCollectionProps) {
   const products = await getCollectionProducts(slug, take);
   if (!products.length) return null;
-  return <ProductCarousel title={title} products={products} variant={variant} />;
+  return <ProductCarousel title={title} products={products} />;
 }

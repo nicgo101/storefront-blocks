@@ -9,7 +9,8 @@ For a horizontal, swipeable strip use `product-carousel-collection`.
 **Requires** (check before copying, `uses` in block.json):
 
 - `@nicgo101/storefront-commerce` in the site's `package.json` (the four storefronts have it)
-- `src/components/commerce/product-card.tsx` exporting `ProductCard({ product, index })`
+- `src/components/commerce/product-card.tsx` exporting `ProductCard({ product })` (the
+  block passes only `product`; gm's optional `index` defaults, pv has none)
 - a Vendure shop-api behind the site (`shopApiUrl` in "This site")
 
 **The slug** is the collection's slug in the shop (`/collection/<slug>` on the live site).
