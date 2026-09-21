@@ -1,0 +1,17 @@
+{
+  "id": "gallery-lightbox",
+  "version": 1,
+  "name": "Bildgalleri med lightbox",
+  "category": "media",
+  "tier": "generic",
+  "summary": "Rutnät av bilder. Klick öppnar bilden i fullskärm med svep, pilar och tangentbord.",
+  "files": [{ "path": "gallery-lightbox.tsx", "target": "src/components/blocks/gallery-lightbox.tsx" }],
+  "uses": { "ui": ["dialog", "carousel"], "packages": ["next", "embla-carousel-react"], "site": [] },
+  "props": [
+    { "name": "title", "type": "string | null", "default": null },
+    { "name": "images", "type": "{ src: string; alt: string; width: number; height: number }[]", "required": true },
+    { "name": "columns", "type": "2 | 3 | 4", "default": 3 },
+    { "name": "thumbs", "type": "'square' | 'natural'", "default": "square" }
+  ],
+  "thumbnail": "thumb.png"
+}

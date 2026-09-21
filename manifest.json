@@ -1,7 +1,62 @@
 {
-  "version": "54139f1",
-  "builtAt": "2026-09-21T13:54:20.759Z",
+  "version": "1dcb94e",
+  "builtAt": "2026-09-21T13:58:30.304Z",
   "blocks": [
+    {
+      "id": "collection-banner",
+      "version": 1,
+      "name": "Kollektionsbanner",
+      "category": "commerce",
+      "tier": "shop",
+      "summary": "En banner för en kategori med dess namn, bild och en knapp till hela sortimentet. Namn och bild hämtas från butiken om du inte anger egna.",
+      "files": [
+        {
+          "path": "collection-banner.tsx",
+          "target": "src/components/blocks/collection-banner.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [
+          "button"
+        ],
+        "packages": [
+          "@nicgo101/storefront-commerce",
+          "next"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "slug",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "image",
+          "type": "{ src: string; alt: string; width: number; height: number }"
+        },
+        {
+          "name": "buttonLabel",
+          "type": "string",
+          "default": "Se hela sortimentet"
+        },
+        {
+          "name": "layout",
+          "type": "'wide' | 'card'",
+          "default": "wide"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/collection-banner"
+    },
     {
       "id": "contact-map",
       "version": 1,
@@ -151,6 +206,55 @@
       ],
       "thumbnail": "thumb.png",
       "dir": "blocks/faq-accordion"
+    },
+    {
+      "id": "gallery-lightbox",
+      "version": 1,
+      "name": "Bildgalleri med lightbox",
+      "category": "media",
+      "tier": "generic",
+      "summary": "Rutnät av bilder. Klick öppnar bilden i fullskärm med svep, pilar och tangentbord.",
+      "files": [
+        {
+          "path": "gallery-lightbox.tsx",
+          "target": "src/components/blocks/gallery-lightbox.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [
+          "dialog",
+          "carousel"
+        ],
+        "packages": [
+          "next",
+          "embla-carousel-react"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string | null",
+          "default": null
+        },
+        {
+          "name": "images",
+          "type": "{ src: string; alt: string; width: number; height: number }[]",
+          "required": true
+        },
+        {
+          "name": "columns",
+          "type": "2 | 3 | 4",
+          "default": 3
+        },
+        {
+          "name": "thumbs",
+          "type": "'square' | 'natural'",
+          "default": "square"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/gallery-lightbox"
     },
     {
       "id": "hero-image",
@@ -345,6 +449,113 @@
       ],
       "thumbnail": "thumb.png",
       "dir": "blocks/pricing-table"
+    },
+    {
+      "id": "product-carousel-collection",
+      "version": 1,
+      "name": "Produktband ur kollektion",
+      "category": "commerce",
+      "tier": "shop",
+      "summary": "Ett svepbart band med produkter från en vald kategori, med sajtens egen produktkarusell.",
+      "files": [
+        {
+          "path": "product-carousel-collection.tsx",
+          "target": "src/components/blocks/product-carousel-collection.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [
+          "@nicgo101/storefront-commerce",
+          "next"
+        ],
+        "site": [
+          "@/components/commerce/product-carousel"
+        ]
+      },
+      "props": [
+        {
+          "name": "slug",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "take",
+          "type": "number",
+          "default": 12
+        },
+        {
+          "name": "variant",
+          "type": "'default' | 'inverted'",
+          "default": "default"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/product-carousel-collection"
+    },
+    {
+      "id": "product-grid-collection",
+      "version": 1,
+      "name": "Produkter ur kollektion",
+      "category": "commerce",
+      "tier": "shop",
+      "summary": "Ett rutnät med produkter från en vald kategori, med sajtens vanliga produktkort och en länk till hela kategorin.",
+      "files": [
+        {
+          "path": "product-grid-collection.tsx",
+          "target": "src/components/blocks/product-grid-collection.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [
+          "button"
+        ],
+        "packages": [
+          "@nicgo101/storefront-commerce",
+          "next"
+        ],
+        "site": [
+          "@/components/commerce/product-card"
+        ]
+      },
+      "props": [
+        {
+          "name": "slug",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "title",
+          "type": "string | null",
+          "default": null
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "take",
+          "type": "number",
+          "default": 8
+        },
+        {
+          "name": "moreHref",
+          "type": "string | null",
+          "default": "/collection/<slug>"
+        },
+        {
+          "name": "moreLabel",
+          "type": "string",
+          "default": "Visa alla"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/product-grid-collection"
     },
     {
       "id": "stats-row",

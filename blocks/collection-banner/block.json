@@ -1,0 +1,19 @@
+{
+  "id": "collection-banner",
+  "version": 1,
+  "name": "Kollektionsbanner",
+  "category": "commerce",
+  "tier": "shop",
+  "summary": "En banner för en kategori med dess namn, bild och en knapp till hela sortimentet. Namn och bild hämtas från butiken om du inte anger egna.",
+  "files": [{ "path": "collection-banner.tsx", "target": "src/components/blocks/collection-banner.tsx" }],
+  "uses": { "ui": ["button"], "packages": ["@nicgo101/storefront-commerce", "next"], "site": [] },
+  "props": [
+    { "name": "slug", "type": "string", "required": true },
+    { "name": "title", "type": "string" },
+    { "name": "text", "type": "string" },
+    { "name": "image", "type": "{ src: string; alt: string; width: number; height: number }" },
+    { "name": "buttonLabel", "type": "string", "default": "Se hela sortimentet" },
+    { "name": "layout", "type": "'wide' | 'card'", "default": "wide" }
+  ],
+  "thumbnail": "thumb.png"
+}

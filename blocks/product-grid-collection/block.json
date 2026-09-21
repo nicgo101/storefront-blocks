@@ -1,0 +1,19 @@
+{
+  "id": "product-grid-collection",
+  "version": 1,
+  "name": "Produkter ur kollektion",
+  "category": "commerce",
+  "tier": "shop",
+  "summary": "Ett rutnät med produkter från en vald kategori, med sajtens vanliga produktkort och en länk till hela kategorin.",
+  "files": [{ "path": "product-grid-collection.tsx", "target": "src/components/blocks/product-grid-collection.tsx" }],
+  "uses": { "ui": ["button"], "packages": ["@nicgo101/storefront-commerce", "next"], "site": ["@/components/commerce/product-card"] },
+  "props": [
+    { "name": "slug", "type": "string", "required": true },
+    { "name": "title", "type": "string | null", "default": null },
+    { "name": "text", "type": "string" },
+    { "name": "take", "type": "number", "default": 8 },
+    { "name": "moreHref", "type": "string | null", "default": "/collection/<slug>" },
+    { "name": "moreLabel", "type": "string", "default": "Visa alla" }
+  ],
+  "thumbnail": "thumb.png"
+}
