@@ -52,6 +52,13 @@ They are what lets one file look right on every site it is copied into. The gate
 3. `npm run check` green. `npm run thumbs -- <id>` and commit the PNG.
 4. Smoke it in a real storefront: copy to its `target`, `tsc --noEmit`, `npm run check-design`.
 
+## Example pages
+
+Whole pages built from blocks only, in the order a webmaster would stack them, at
+`/exempel/startsida` (14 blocks), `/exempel/om-oss` (11) and `/exempel/kontakt` (8) in the
+showcase. `npm run example-shots` renders them full-page to `docs/exempel-*.png`; those
+screenshots are what to show a customer who asks "what can the editor build".
+
 ## Development
 
 ```bash

@@ -14,7 +14,8 @@
     "check-design": "node scripts/check-design.mjs",
     "test": "vitest run",
     "check": "npm run manifest && npm run check-types && npm run lint && npm run check-design && npm run test",
-    "thumbs": "node scripts/thumbs.mjs"
+    "thumbs": "node scripts/thumbs.mjs",
+    "example-shots": "node scripts/example-shots.mjs"
   },
   "dependencies": {
     "@nicgo101/storefront-commerce": "^1.22.1",
