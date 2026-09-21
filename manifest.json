@@ -1,7 +1,62 @@
 {
-  "version": "abe7e0d",
-  "builtAt": "2026-09-21T13:50:18.930Z",
+  "version": "54139f1",
+  "builtAt": "2026-09-21T13:54:20.759Z",
   "blocks": [
+    {
+      "id": "contact-map",
+      "version": 1,
+      "name": "Kontakt med karta",
+      "category": "contact",
+      "tier": "generic",
+      "summary": "Adress, telefon, e-post och öppettider till vänster, en inbäddad karta till höger.",
+      "files": [
+        {
+          "path": "contact-map.tsx",
+          "target": "src/components/blocks/contact-map.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [
+          "lucide-react"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "default": "Hitta till oss"
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "address",
+          "type": "string[]",
+          "required": true
+        },
+        {
+          "name": "phone",
+          "type": "string"
+        },
+        {
+          "name": "email",
+          "type": "string"
+        },
+        {
+          "name": "hours",
+          "type": "string[]"
+        },
+        {
+          "name": "mapEmbedUrl",
+          "type": "string"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/contact-map"
+    },
     {
       "id": "cta-band",
       "version": 1,
@@ -153,6 +208,145 @@
       "dir": "blocks/hero-image"
     },
     {
+      "id": "logo-band",
+      "version": 1,
+      "name": "Logotypband",
+      "category": "social-proof",
+      "tier": "generic",
+      "summary": "En rad med märkes- eller partnerlogotyper, grå tills man håller musen över. Bra under hero eller före sidfoten.",
+      "files": [
+        {
+          "path": "logo-band.tsx",
+          "target": "src/components/blocks/logo-band.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [
+          "next"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string | null",
+          "default": "Märken vi säljer"
+        },
+        {
+          "name": "logos",
+          "type": "{ src: string; alt: string; width: number; height: number; href?: string }[]",
+          "required": true
+        },
+        {
+          "name": "tone",
+          "type": "'gray' | 'color'",
+          "default": "gray"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/logo-band"
+    },
+    {
+      "id": "newsletter",
+      "version": 1,
+      "name": "Nyhetsbrev",
+      "category": "contact",
+      "tier": "generic",
+      "summary": "Rubrik, en rad text, e-postfält och knapp. Kopplas till sajtens befintliga nyhetsbrevsfunktion.",
+      "files": [
+        {
+          "path": "newsletter.tsx",
+          "target": "src/components/blocks/newsletter.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [
+          "button",
+          "input",
+          "label"
+        ],
+        "packages": [],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "default": "Nyhetsbrev"
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "action",
+          "type": "(formData: FormData) => Promise<{ ok: boolean; message?: string }>",
+          "required": true
+        },
+        {
+          "name": "buttonLabel",
+          "type": "string",
+          "default": "Prenumerera"
+        },
+        {
+          "name": "consentText",
+          "type": "string"
+        },
+        {
+          "name": "variant",
+          "type": "'band' | 'card'",
+          "default": "band"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/newsletter"
+    },
+    {
+      "id": "pricing-table",
+      "version": 1,
+      "name": "Prislista",
+      "category": "content",
+      "tier": "generic",
+      "summary": "Två till fyra kort med namn, pris, punktlista och knapp. Ett kort kan lyftas fram med en etikett.",
+      "files": [
+        {
+          "path": "pricing-table.tsx",
+          "target": "src/components/blocks/pricing-table.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [
+          "badge",
+          "button",
+          "card"
+        ],
+        "packages": [
+          "lucide-react",
+          "next"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string | null",
+          "default": "Priser"
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "plans",
+          "type": "{ name: string; price: string; period?: string; text?: string; features: string[]; cta: { label: string; href: string }; highlighted?: boolean; badge?: string }[]",
+          "required": true
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/pricing-table"
+    },
+    {
       "id": "stats-row",
       "version": 1,
       "name": "Siffror i rad",
@@ -230,6 +424,49 @@
       ],
       "thumbnail": "thumb.png",
       "dir": "blocks/steps"
+    },
+    {
+      "id": "testimonials",
+      "version": 1,
+      "name": "Kundomdömen",
+      "category": "social-proof",
+      "tier": "generic",
+      "summary": "Citat från kunder med namn, ort och stjärnor. Tre i bredd på dator, svepbara på mobil.",
+      "files": [
+        {
+          "path": "testimonials.tsx",
+          "target": "src/components/blocks/testimonials.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [
+          "card",
+          "carousel"
+        ],
+        "packages": [
+          "lucide-react",
+          "embla-carousel-react"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string | null",
+          "default": "Vad kunderna säger"
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "items",
+          "type": "{ quote: string; name: string; role?: string; rating?: 1|2|3|4|5 }[]",
+          "required": true
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/testimonials"
     },
     {
       "id": "usp-row",

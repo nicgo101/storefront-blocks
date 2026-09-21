@@ -1,0 +1,16 @@
+{
+  "id": "logo-band",
+  "version": 1,
+  "name": "Logotypband",
+  "category": "social-proof",
+  "tier": "generic",
+  "summary": "En rad med märkes- eller partnerlogotyper, grå tills man håller musen över. Bra under hero eller före sidfoten.",
+  "files": [{ "path": "logo-band.tsx", "target": "src/components/blocks/logo-band.tsx" }],
+  "uses": { "ui": [], "packages": ["next"], "site": [] },
+  "props": [
+    { "name": "title", "type": "string | null", "default": "Märken vi säljer" },
+    { "name": "logos", "type": "{ src: string; alt: string; width: number; height: number; href?: string }[]", "required": true },
+    { "name": "tone", "type": "'gray' | 'color'", "default": "gray" }
+  ],
+  "thumbnail": "thumb.png"
+}

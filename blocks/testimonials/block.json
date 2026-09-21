@@ -1,0 +1,16 @@
+{
+  "id": "testimonials",
+  "version": 1,
+  "name": "Kundomdömen",
+  "category": "social-proof",
+  "tier": "generic",
+  "summary": "Citat från kunder med namn, ort och stjärnor. Tre i bredd på dator, svepbara på mobil.",
+  "files": [{ "path": "testimonials.tsx", "target": "src/components/blocks/testimonials.tsx" }],
+  "uses": { "ui": ["card", "carousel"], "packages": ["lucide-react", "embla-carousel-react"], "site": [] },
+  "props": [
+    { "name": "title", "type": "string | null", "default": "Vad kunderna säger" },
+    { "name": "text", "type": "string" },
+    { "name": "items", "type": "{ quote: string; name: string; role?: string; rating?: 1|2|3|4|5 }[]", "required": true }
+  ],
+  "thumbnail": "thumb.png"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "newsletter",
+  "version": 1,
+  "name": "Nyhetsbrev",
+  "category": "contact",
+  "tier": "generic",
+  "summary": "Rubrik, en rad text, e-postfält och knapp. Kopplas till sajtens befintliga nyhetsbrevsfunktion.",
+  "files": [{ "path": "newsletter.tsx", "target": "src/components/blocks/newsletter.tsx" }],
+  "uses": { "ui": ["button", "input", "label"], "packages": [], "site": [] },
+  "props": [
+    { "name": "title", "type": "string", "default": "Nyhetsbrev" },
+    { "name": "text", "type": "string" },
+    { "name": "action", "type": "(formData: FormData) => Promise<{ ok: boolean; message?: string }>", "required": true },
+    { "name": "buttonLabel", "type": "string", "default": "Prenumerera" },
+    { "name": "consentText", "type": "string" },
+    { "name": "variant", "type": "'band' | 'card'", "default": "band" }
+  ],
+  "thumbnail": "thumb.png"
+}

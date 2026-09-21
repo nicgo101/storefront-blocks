@@ -1,0 +1,20 @@
+{
+  "id": "contact-map",
+  "version": 1,
+  "name": "Kontakt med karta",
+  "category": "contact",
+  "tier": "generic",
+  "summary": "Adress, telefon, e-post och öppettider till vänster, en inbäddad karta till höger.",
+  "files": [{ "path": "contact-map.tsx", "target": "src/components/blocks/contact-map.tsx" }],
+  "uses": { "ui": [], "packages": ["lucide-react"], "site": [] },
+  "props": [
+    { "name": "title", "type": "string", "default": "Hitta till oss" },
+    { "name": "text", "type": "string" },
+    { "name": "address", "type": "string[]", "required": true },
+    { "name": "phone", "type": "string" },
+    { "name": "email", "type": "string" },
+    { "name": "hours", "type": "string[]" },
+    { "name": "mapEmbedUrl", "type": "string" }
+  ],
+  "thumbnail": "thumb.png"
+}

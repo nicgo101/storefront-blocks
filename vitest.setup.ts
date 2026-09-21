@@ -12,8 +12,9 @@ vi.mock('next/image', () => ({
 }));
 
 // embla needs layout; jsdom has none. ResizeObserver is enough for it to mount.
-class RO { observe() {} unobserve() {} disconnect() {} }
+class RO { observe() {} unobserve() {} disconnect() {} takeRecords() { return []; } }
 (globalThis as unknown as { ResizeObserver: typeof RO }).ResizeObserver = RO;
+(globalThis as unknown as { IntersectionObserver: typeof RO }).IntersectionObserver = RO;
 if (!window.matchMedia) {
   window.matchMedia = ((q: string) => ({ matches: false, media: q, onchange: null, addListener() {}, removeListener() {}, addEventListener() {}, removeEventListener() {}, dispatchEvent: () => false })) as typeof window.matchMedia;
 }

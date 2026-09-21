@@ -1,0 +1,16 @@
+{
+  "id": "pricing-table",
+  "version": 1,
+  "name": "Prislista",
+  "category": "content",
+  "tier": "generic",
+  "summary": "Två till fyra kort med namn, pris, punktlista och knapp. Ett kort kan lyftas fram med en etikett.",
+  "files": [{ "path": "pricing-table.tsx", "target": "src/components/blocks/pricing-table.tsx" }],
+  "uses": { "ui": ["badge", "button", "card"], "packages": ["lucide-react", "next"], "site": [] },
+  "props": [
+    { "name": "title", "type": "string | null", "default": "Priser" },
+    { "name": "text", "type": "string" },
+    { "name": "plans", "type": "{ name: string; price: string; period?: string; text?: string; features: string[]; cta: { label: string; href: string }; highlighted?: boolean; badge?: string }[]", "required": true }
+  ],
+  "thumbnail": "thumb.png"
+}
