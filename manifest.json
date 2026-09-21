@@ -1,6 +1,6 @@
 {
-  "version": "2600e41",
-  "builtAt": "2026-09-21T18:24:47.358Z",
+  "version": "49cc37c",
+  "builtAt": "2026-09-21T20:56:57.185Z",
   "blocks": [
     {
       "id": "announcement-bar",
@@ -115,6 +115,70 @@
       ],
       "thumbnail": "thumb.png",
       "dir": "blocks/before-after"
+    },
+    {
+      "id": "brand-grid",
+      "version": 1,
+      "name": "Märken",
+      "category": "commerce",
+      "tier": "shop",
+      "summary": "Rutor med butikens märken, hämtade ur produktsökningens facetter, länkade till sökningen filtrerad på märket. Välj vilka eller visa de största.",
+      "files": [
+        {
+          "path": "brand-grid.tsx",
+          "target": "src/components/blocks/brand-grid.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [
+          "@nicgo101/storefront-commerce",
+          "next"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string | null",
+          "default": "Märken"
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "facet",
+          "type": "string",
+          "default": "brand"
+        },
+        {
+          "name": "names",
+          "type": "string[]"
+        },
+        {
+          "name": "take",
+          "type": "number",
+          "default": 12
+        },
+        {
+          "name": "hrefTemplate",
+          "type": "string",
+          "default": "/search?facets={id}"
+        },
+        {
+          "name": "showCount",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "columns",
+          "type": "3 | 4 | 6",
+          "default": 4
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/brand-grid"
     },
     {
       "id": "breadcrumbs",
@@ -550,6 +614,56 @@
       ],
       "thumbnail": "thumb.png",
       "dir": "blocks/contact-map"
+    },
+    {
+      "id": "countdown-band",
+      "version": 1,
+      "name": "Nedräkningsband",
+      "category": "content",
+      "tier": "generic",
+      "summary": "Ett band med rubrik, nedräkning i dagar, timmar, minuter och sekunder, och en knapp. Försvinner av sig självt när tiden gått ut.",
+      "files": [
+        {
+          "path": "countdown-band.tsx",
+          "target": "src/components/blocks/countdown-band.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [
+          "button"
+        ],
+        "packages": [
+          "next"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "endsAt",
+          "type": "string (ISO date-time with offset)",
+          "required": true
+        },
+        {
+          "name": "link",
+          "type": "{ label: string; href: string }"
+        },
+        {
+          "name": "tone",
+          "type": "'primary' | 'muted'",
+          "default": "primary"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/countdown-band"
     },
     {
       "id": "cta-band",
@@ -1351,6 +1465,158 @@
       "dir": "blocks/product-tabs-collections"
     },
     {
+      "id": "promo-tiles",
+      "version": 1,
+      "name": "Kampanjrutor",
+      "category": "hero",
+      "tier": "generic",
+      "summary": "Två eller tre stora klickbara rutor med bild, rubrik och länk, för kampanjer eller avdelningar direkt under hero.",
+      "files": [
+        {
+          "path": "promo-tiles.tsx",
+          "target": "src/components/blocks/promo-tiles.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [
+          "next",
+          "lucide-react"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "tiles",
+          "type": "{ eyebrow?: string; title: string; text?: string; href: string; linkLabel?: string; image: { src: string; alt: string; width: number; height: number }; tone?: 'dark' | 'light' }[]",
+          "required": true
+        },
+        {
+          "name": "layout",
+          "type": "'even' | 'wide'",
+          "default": "even"
+        },
+        {
+          "name": "height",
+          "type": "'short' | 'tall'",
+          "default": "short"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/promo-tiles"
+    },
+    {
+      "id": "recently-viewed",
+      "version": 1,
+      "name": "Senast visade produkter",
+      "category": "commerce",
+      "tier": "generic",
+      "summary": "Produkterna besökaren nyss tittat på, sparade i webbläsaren. Två delar: en spårare på produktsidan och en lista att lägga där man vill.",
+      "files": [
+        {
+          "path": "recently-viewed.tsx",
+          "target": "src/components/blocks/recently-viewed.tsx"
+        },
+        {
+          "path": "recently-viewed-tracker.tsx",
+          "target": "src/components/blocks/recently-viewed-tracker.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [
+          "next"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string | null",
+          "default": "Senast visade"
+        },
+        {
+          "name": "take",
+          "type": "number",
+          "default": 6
+        },
+        {
+          "name": "hrefTemplate",
+          "type": "string",
+          "default": "/produkt/{slug}"
+        },
+        {
+          "name": "excludeSlug",
+          "type": "string"
+        },
+        {
+          "name": "items",
+          "type": "ViewedProduct[] (preview only, never on a real page)"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/recently-viewed"
+    },
+    {
+      "id": "review-summary",
+      "version": 1,
+      "name": "Snittbetyg",
+      "category": "social-proof",
+      "tier": "generic",
+      "summary": "Stjärnor, snittbetyg och antal omdömen på en rad, med länk till omdömena. Som band över sidan eller kompakt under hero.",
+      "files": [
+        {
+          "path": "review-summary.tsx",
+          "target": "src/components/blocks/review-summary.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [
+          "next",
+          "lucide-react"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "rating",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "count",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "max",
+          "type": "number",
+          "default": 5
+        },
+        {
+          "name": "source",
+          "type": "string"
+        },
+        {
+          "name": "href",
+          "type": "string"
+        },
+        {
+          "name": "linkLabel",
+          "type": "string",
+          "default": "Läs omdömena"
+        },
+        {
+          "name": "variant",
+          "type": "'band' | 'inline'",
+          "default": "band"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/review-summary"
+    },
+    {
       "id": "rich-text",
       "version": 1,
       "name": "Brödtext",
@@ -1531,6 +1797,50 @@
       ],
       "thumbnail": "thumb.png",
       "dir": "blocks/sticky-cta"
+    },
+    {
+      "id": "store-locations",
+      "version": 1,
+      "name": "Butiker och öppettider",
+      "category": "contact",
+      "tier": "generic",
+      "summary": "Ett kort per butik eller kontor med adress, telefon, e-post, öppettider och kartlänk. För företag med fler än ett ställe.",
+      "files": [
+        {
+          "path": "store-locations.tsx",
+          "target": "src/components/blocks/store-locations.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [
+          "lucide-react"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string | null",
+          "default": "Våra butiker"
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "locations",
+          "type": "{ name: string; address: string[]; phone?: string; email?: string; hours?: string[]; note?: string; mapHref?: string }[]",
+          "required": true
+        },
+        {
+          "name": "columns",
+          "type": "2 | 3",
+          "default": 3
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/store-locations"
     },
     {
       "id": "tabs-content",

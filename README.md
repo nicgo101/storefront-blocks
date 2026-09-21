@@ -95,3 +95,8 @@ manifest and thumbnails to the editor, and tells the webmaster to read
   thumbs script now waits for the wrapper to be attached rather than visible and falls
   back to a viewport shot when the block draws outside normal flow (sticky-cta). Smoke in
   gm and pv green.
+- 2026-09-21, fifth batch: 6 more (43 total, 35 generic, 8 shop): `countdown-band`,
+  `review-summary`, `recently-viewed` (tracker + list, localStorage, `items` prop for
+  previews only), `promo-tiles`, `store-locations`, `brand-grid` (facet values from an
+  unfiltered search, linked to `/search?facets=<id>`). The commerce mock returns facet
+  values. Smoke in gm and pv green.

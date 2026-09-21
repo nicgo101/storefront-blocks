@@ -1,0 +1,17 @@
+{
+  "id": "store-locations",
+  "version": 1,
+  "name": "Butiker och öppettider",
+  "category": "contact",
+  "tier": "generic",
+  "summary": "Ett kort per butik eller kontor med adress, telefon, e-post, öppettider och kartlänk. För företag med fler än ett ställe.",
+  "files": [{ "path": "store-locations.tsx", "target": "src/components/blocks/store-locations.tsx" }],
+  "uses": { "ui": [], "packages": ["lucide-react"], "site": [] },
+  "props": [
+    { "name": "title", "type": "string | null", "default": "Våra butiker" },
+    { "name": "text", "type": "string" },
+    { "name": "locations", "type": "{ name: string; address: string[]; phone?: string; email?: string; hours?: string[]; note?: string; mapHref?: string }[]", "required": true },
+    { "name": "columns", "type": "2 | 3", "default": 3 }
+  ],
+  "thumbnail": "thumb.png"
+}

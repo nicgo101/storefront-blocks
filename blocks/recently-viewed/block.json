@@ -1,0 +1,21 @@
+{
+  "id": "recently-viewed",
+  "version": 1,
+  "name": "Senast visade produkter",
+  "category": "commerce",
+  "tier": "generic",
+  "summary": "Produkterna besökaren nyss tittat på, sparade i webbläsaren. Två delar: en spårare på produktsidan och en lista att lägga där man vill.",
+  "files": [
+    { "path": "recently-viewed.tsx", "target": "src/components/blocks/recently-viewed.tsx" },
+    { "path": "recently-viewed-tracker.tsx", "target": "src/components/blocks/recently-viewed-tracker.tsx" }
+  ],
+  "uses": { "ui": [], "packages": ["next"], "site": [] },
+  "props": [
+    { "name": "title", "type": "string | null", "default": "Senast visade" },
+    { "name": "take", "type": "number", "default": 6 },
+    { "name": "hrefTemplate", "type": "string", "default": "/produkt/{slug}" },
+    { "name": "excludeSlug", "type": "string" },
+    { "name": "items", "type": "ViewedProduct[] (preview only, never on a real page)" }
+  ],
+  "thumbnail": "thumb.png"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "countdown-band",
+  "version": 1,
+  "name": "Nedräkningsband",
+  "category": "content",
+  "tier": "generic",
+  "summary": "Ett band med rubrik, nedräkning i dagar, timmar, minuter och sekunder, och en knapp. Försvinner av sig självt när tiden gått ut.",
+  "files": [{ "path": "countdown-band.tsx", "target": "src/components/blocks/countdown-band.tsx" }],
+  "uses": { "ui": ["button"], "packages": ["next"], "site": [] },
+  "props": [
+    { "name": "title", "type": "string", "required": true },
+    { "name": "text", "type": "string" },
+    { "name": "endsAt", "type": "string (ISO date-time with offset)", "required": true },
+    { "name": "link", "type": "{ label: string; href: string }" },
+    { "name": "tone", "type": "'primary' | 'muted'", "default": "primary" }
+  ],
+  "thumbnail": "thumb.png"
+}

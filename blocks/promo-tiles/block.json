@@ -1,0 +1,16 @@
+{
+  "id": "promo-tiles",
+  "version": 1,
+  "name": "Kampanjrutor",
+  "category": "hero",
+  "tier": "generic",
+  "summary": "Två eller tre stora klickbara rutor med bild, rubrik och länk, för kampanjer eller avdelningar direkt under hero.",
+  "files": [{ "path": "promo-tiles.tsx", "target": "src/components/blocks/promo-tiles.tsx" }],
+  "uses": { "ui": [], "packages": ["next", "lucide-react"], "site": [] },
+  "props": [
+    { "name": "tiles", "type": "{ eyebrow?: string; title: string; text?: string; href: string; linkLabel?: string; image: { src: string; alt: string; width: number; height: number }; tone?: 'dark' | 'light' }[]", "required": true },
+    { "name": "layout", "type": "'even' | 'wide'", "default": "even" },
+    { "name": "height", "type": "'short' | 'tall'", "default": "short" }
+  ],
+  "thumbnail": "thumb.png"
+}

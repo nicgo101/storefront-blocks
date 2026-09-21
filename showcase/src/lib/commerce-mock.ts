@@ -50,7 +50,11 @@ export async function query(_document: unknown, variables?: { input?: { take?: n
   }
   const take = variables?.input?.take ?? 8;
   const items = mockProducts(take);
-  return { data: { search: { items, totalItems: items.length } } };
+  const facetValues = ['Gardena', 'Fiskars', 'Husqvarna', 'Weibulls', 'Hozelock', 'Kärcher'].map((name, i) => ({
+    count: 12 - i, facetValue: { id: String(500 + i), name, customFields: { rangeMin: null, rangeMax: null }, facet: { id: '50', name: 'Märke', code: 'brand' } },
+  }));
+  facetValues.push({ count: 3, facetValue: { id: '600', name: 'Röd', customFields: { rangeMin: null, rangeMax: null }, facet: { id: '60', name: 'Färg', code: 'color' } } });
+  return { data: { search: { items, totalItems: items.length, facetValues } } };
 }
 
 export async function mutate(): Promise<never> {

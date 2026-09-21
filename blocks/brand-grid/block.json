@@ -1,0 +1,21 @@
+{
+  "id": "brand-grid",
+  "version": 1,
+  "name": "Märken",
+  "category": "commerce",
+  "tier": "shop",
+  "summary": "Rutor med butikens märken, hämtade ur produktsökningens facetter, länkade till sökningen filtrerad på märket. Välj vilka eller visa de största.",
+  "files": [{ "path": "brand-grid.tsx", "target": "src/components/blocks/brand-grid.tsx" }],
+  "uses": { "ui": [], "packages": ["@nicgo101/storefront-commerce", "next"], "site": [] },
+  "props": [
+    { "name": "title", "type": "string | null", "default": "Märken" },
+    { "name": "text", "type": "string" },
+    { "name": "facet", "type": "string", "default": "brand" },
+    { "name": "names", "type": "string[]" },
+    { "name": "take", "type": "number", "default": 12 },
+    { "name": "hrefTemplate", "type": "string", "default": "/search?facets={id}" },
+    { "name": "showCount", "type": "boolean", "default": false },
+    { "name": "columns", "type": "3 | 4 | 6", "default": 4 }
+  ],
+  "thumbnail": "thumb.png"
+}
