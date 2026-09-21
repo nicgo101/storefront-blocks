@@ -1,0 +1,18 @@
+{
+  "id": "tabs-content",
+  "version": 1,
+  "name": "Flikar med innehåll",
+  "category": "content",
+  "tier": "generic",
+  "summary": "Två till sex flikar med text under varje, till exempel Passform, Skötsel och Frakt. Sparar plats när flera korta texter hör ihop.",
+  "files": [{ "path": "tabs-content.tsx", "target": "src/components/blocks/tabs-content.tsx" }],
+  "uses": { "ui": ["tabs"], "packages": [], "site": [] },
+  "props": [
+    { "name": "title", "type": "string | null", "default": null },
+    { "name": "text", "type": "string" },
+    { "name": "tabs", "type": "{ label: string; id: string; paragraphs?: string[]; content?: ReactNode }[]", "required": true },
+    { "name": "defaultTab", "type": "string" },
+    { "name": "width", "type": "'narrow' | 'wide'", "default": "narrow" }
+  ],
+  "thumbnail": "thumb.png"
+}

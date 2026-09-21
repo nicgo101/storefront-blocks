@@ -1,0 +1,18 @@
+{
+  "id": "sticky-cta",
+  "version": 1,
+  "name": "Flytande knapp",
+  "category": "navigation",
+  "tier": "generic",
+  "summary": "En knapp som ligger kvar längst ner på skärmen på mobil: ring oss, boka, chatta. Kan visas först efter att besökaren scrollat.",
+  "files": [{ "path": "sticky-cta.tsx", "target": "src/components/blocks/sticky-cta.tsx" }],
+  "uses": { "ui": [], "packages": ["next", "lucide-react"], "site": [] },
+  "props": [
+    { "name": "label", "type": "string", "required": true },
+    { "name": "href", "type": "string", "required": true },
+    { "name": "icon", "type": "'phone' | 'chat' | 'calendar' | 'bag' | 'arrow'", "default": "phone" },
+    { "name": "showAfter", "type": "number (px)", "default": 0 },
+    { "name": "on", "type": "'mobile' | 'all'", "default": "mobile" }
+  ],
+  "thumbnail": "thumb.png"
+}

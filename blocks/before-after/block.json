@@ -1,0 +1,21 @@
+{
+  "id": "before-after",
+  "version": 1,
+  "name": "Före och efter",
+  "category": "media",
+  "tier": "generic",
+  "summary": "Två bilder ovanpå varandra med ett reglage att dra mellan dem. För renovering, rengöring, reparation.",
+  "files": [{ "path": "before-after.tsx", "target": "src/components/blocks/before-after.tsx" }],
+  "uses": { "ui": [], "packages": ["next"], "site": [] },
+  "props": [
+    { "name": "title", "type": "string | null", "default": null },
+    { "name": "text", "type": "string" },
+    { "name": "before", "type": "{ src: string; alt: string; width: number; height: number }", "required": true },
+    { "name": "after", "type": "{ src: string; alt: string; width: number; height: number }", "required": true },
+    { "name": "beforeLabel", "type": "string", "default": "Före" },
+    { "name": "afterLabel", "type": "string", "default": "Efter" },
+    { "name": "initial", "type": "number (0-100)", "default": 50 },
+    { "name": "width", "type": "'narrow' | 'wide'", "default": "wide" }
+  ],
+  "thumbnail": "thumb.png"
+}

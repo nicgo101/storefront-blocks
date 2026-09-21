@@ -90,3 +90,8 @@ manifest and thumbnails to the editor, and tells the webmaster to read
   `campaign-hero` (two files: server hero + client countdown), `footer-columns`. Lesson:
   under cacheComponents a server component may not call `new Date()` while prerendering,
   so the footer reads the year inside a `'use cache'` helper. Smoke in gm and pv green.
+- 2026-09-21, fourth batch: 6 more (37 total, 30 generic, 7 shop): `tabs-content`,
+  `text-columns`, `before-after`, `sticky-cta`, `certifications-row`, `breadcrumbs`. The
+  thumbs script now waits for the wrapper to be attached rather than visible and falls
+  back to a viewport shot when the block draws outside normal flow (sticky-cta). Smoke in
+  gm and pv green.

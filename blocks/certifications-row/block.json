@@ -1,0 +1,17 @@
+{
+  "id": "certifications-row",
+  "version": 1,
+  "name": "Certifieringar",
+  "category": "social-proof",
+  "tier": "generic",
+  "summary": "Tre till fem certifikat eller märkningar med symbol, namn och en mening om vad det betyder för kunden. Till skillnad från logotypbandet förklarar den varje märke.",
+  "files": [{ "path": "certifications-row.tsx", "target": "src/components/blocks/certifications-row.tsx" }],
+  "uses": { "ui": [], "packages": ["next", "lucide-react"], "site": [] },
+  "props": [
+    { "name": "title", "type": "string | null", "default": "Certifieringar och märkningar" },
+    { "name": "text", "type": "string" },
+    { "name": "items", "type": "{ title: string; text: string; image?: { src: string; alt: string; width: number; height: number }; href?: string }[]", "required": true },
+    { "name": "variant", "type": "'plain' | 'band'", "default": "band" }
+  ],
+  "thumbnail": "thumb.png"
+}

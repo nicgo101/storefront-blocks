@@ -1,0 +1,18 @@
+{
+  "id": "breadcrumbs",
+  "version": 1,
+  "name": "Brödsmulor",
+  "category": "navigation",
+  "tier": "generic",
+  "summary": "Sökvägen överst på en sida: Hem, kategori, aktuell sida. Med strukturerad data så sökmotorer visar spåret.",
+  "files": [{ "path": "breadcrumbs.tsx", "target": "src/components/blocks/breadcrumbs.tsx" }],
+  "uses": { "ui": [], "packages": ["next", "lucide-react"], "site": [] },
+  "props": [
+    { "name": "items", "type": "{ label: string; href?: string }[]", "required": true },
+    { "name": "homeLabel", "type": "string", "default": "Hem" },
+    { "name": "homeHref", "type": "string", "default": "/" },
+    { "name": "jsonLd", "type": "boolean", "default": true },
+    { "name": "siteUrl", "type": "string" }
+  ],
+  "thumbnail": "thumb.png"
+}

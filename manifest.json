@@ -1,6 +1,6 @@
 {
-  "version": "d58d4b2",
-  "builtAt": "2026-09-21T17:53:35.251Z",
+  "version": "2600e41",
+  "builtAt": "2026-09-21T18:24:47.358Z",
   "blocks": [
     {
       "id": "announcement-bar",
@@ -51,6 +51,120 @@
       ],
       "thumbnail": "thumb.png",
       "dir": "blocks/announcement-bar"
+    },
+    {
+      "id": "before-after",
+      "version": 1,
+      "name": "Före och efter",
+      "category": "media",
+      "tier": "generic",
+      "summary": "Två bilder ovanpå varandra med ett reglage att dra mellan dem. För renovering, rengöring, reparation.",
+      "files": [
+        {
+          "path": "before-after.tsx",
+          "target": "src/components/blocks/before-after.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [
+          "next"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string | null",
+          "default": null
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "before",
+          "type": "{ src: string; alt: string; width: number; height: number }",
+          "required": true
+        },
+        {
+          "name": "after",
+          "type": "{ src: string; alt: string; width: number; height: number }",
+          "required": true
+        },
+        {
+          "name": "beforeLabel",
+          "type": "string",
+          "default": "Före"
+        },
+        {
+          "name": "afterLabel",
+          "type": "string",
+          "default": "Efter"
+        },
+        {
+          "name": "initial",
+          "type": "number (0-100)",
+          "default": 50
+        },
+        {
+          "name": "width",
+          "type": "'narrow' | 'wide'",
+          "default": "wide"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/before-after"
+    },
+    {
+      "id": "breadcrumbs",
+      "version": 1,
+      "name": "Brödsmulor",
+      "category": "navigation",
+      "tier": "generic",
+      "summary": "Sökvägen överst på en sida: Hem, kategori, aktuell sida. Med strukturerad data så sökmotorer visar spåret.",
+      "files": [
+        {
+          "path": "breadcrumbs.tsx",
+          "target": "src/components/blocks/breadcrumbs.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [
+          "next",
+          "lucide-react"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "items",
+          "type": "{ label: string; href?: string }[]",
+          "required": true
+        },
+        {
+          "name": "homeLabel",
+          "type": "string",
+          "default": "Hem"
+        },
+        {
+          "name": "homeHref",
+          "type": "string",
+          "default": "/"
+        },
+        {
+          "name": "jsonLd",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "siteUrl",
+          "type": "string"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/breadcrumbs"
     },
     {
       "id": "campaign-hero",
@@ -168,6 +282,51 @@
       ],
       "thumbnail": "thumb.png",
       "dir": "blocks/category-tiles"
+    },
+    {
+      "id": "certifications-row",
+      "version": 1,
+      "name": "Certifieringar",
+      "category": "social-proof",
+      "tier": "generic",
+      "summary": "Tre till fem certifikat eller märkningar med symbol, namn och en mening om vad det betyder för kunden. Till skillnad från logotypbandet förklarar den varje märke.",
+      "files": [
+        {
+          "path": "certifications-row.tsx",
+          "target": "src/components/blocks/certifications-row.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [
+          "next",
+          "lucide-react"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string | null",
+          "default": "Certifieringar och märkningar"
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "items",
+          "type": "{ title: string; text: string; image?: { src: string; alt: string; width: number; height: number }; href?: string }[]",
+          "required": true
+        },
+        {
+          "name": "variant",
+          "type": "'plain' | 'band'",
+          "default": "band"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/certifications-row"
     },
     {
       "id": "collection-banner",
@@ -1323,6 +1482,105 @@
       "dir": "blocks/steps"
     },
     {
+      "id": "sticky-cta",
+      "version": 1,
+      "name": "Flytande knapp",
+      "category": "navigation",
+      "tier": "generic",
+      "summary": "En knapp som ligger kvar längst ner på skärmen på mobil: ring oss, boka, chatta. Kan visas först efter att besökaren scrollat.",
+      "files": [
+        {
+          "path": "sticky-cta.tsx",
+          "target": "src/components/blocks/sticky-cta.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [
+          "next",
+          "lucide-react"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "icon",
+          "type": "'phone' | 'chat' | 'calendar' | 'bag' | 'arrow'",
+          "default": "phone"
+        },
+        {
+          "name": "showAfter",
+          "type": "number (px)",
+          "default": 0
+        },
+        {
+          "name": "on",
+          "type": "'mobile' | 'all'",
+          "default": "mobile"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/sticky-cta"
+    },
+    {
+      "id": "tabs-content",
+      "version": 1,
+      "name": "Flikar med innehåll",
+      "category": "content",
+      "tier": "generic",
+      "summary": "Två till sex flikar med text under varje, till exempel Passform, Skötsel och Frakt. Sparar plats när flera korta texter hör ihop.",
+      "files": [
+        {
+          "path": "tabs-content.tsx",
+          "target": "src/components/blocks/tabs-content.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [
+          "tabs"
+        ],
+        "packages": [],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string | null",
+          "default": null
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "tabs",
+          "type": "{ label: string; id: string; paragraphs?: string[]; content?: ReactNode }[]",
+          "required": true
+        },
+        {
+          "name": "defaultTab",
+          "type": "string"
+        },
+        {
+          "name": "width",
+          "type": "'narrow' | 'wide'",
+          "default": "narrow"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/tabs-content"
+    },
+    {
       "id": "team-grid",
       "version": 1,
       "name": "Medarbetare",
@@ -1409,6 +1667,50 @@
       ],
       "thumbnail": "thumb.png",
       "dir": "blocks/testimonials"
+    },
+    {
+      "id": "text-columns",
+      "version": 1,
+      "name": "Textspalter",
+      "category": "content",
+      "tier": "generic",
+      "summary": "Två eller tre spalter med rubrik, text och valfri länk. För korta texter sida vid sida, utan ikoner eller bilder.",
+      "files": [
+        {
+          "path": "text-columns.tsx",
+          "target": "src/components/blocks/text-columns.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [
+          "next"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string | null",
+          "default": null
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "columns",
+          "type": "{ title: string; paragraphs: string[]; link?: { label: string; href: string } }[]",
+          "required": true
+        },
+        {
+          "name": "variant",
+          "type": "'plain' | 'band'",
+          "default": "plain"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/text-columns"
     },
     {
       "id": "timeline",

@@ -1,0 +1,17 @@
+{
+  "id": "text-columns",
+  "version": 1,
+  "name": "Textspalter",
+  "category": "content",
+  "tier": "generic",
+  "summary": "Två eller tre spalter med rubrik, text och valfri länk. För korta texter sida vid sida, utan ikoner eller bilder.",
+  "files": [{ "path": "text-columns.tsx", "target": "src/components/blocks/text-columns.tsx" }],
+  "uses": { "ui": [], "packages": ["next"], "site": [] },
+  "props": [
+    { "name": "title", "type": "string | null", "default": null },
+    { "name": "text", "type": "string" },
+    { "name": "columns", "type": "{ title: string; paragraphs: string[]; link?: { label: string; href: string } }[]", "required": true },
+    { "name": "variant", "type": "'plain' | 'band'", "default": "plain" }
+  ],
+  "thumbnail": "thumb.png"
+}

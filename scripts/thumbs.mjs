@@ -44,8 +44,10 @@ try {
     // long time; the block's own layout is settled once the document has loaded.
     await page.goto(`${base}/b/${id}`, { waitUntil: 'load', timeout: 60_000 });
     await Promise.race([page.evaluate(() => document.fonts.ready), new Promise((r) => setTimeout(r, 3000))]);
+    // 'attached', not 'visible': a block made of fixed elements (sticky-cta) leaves the
+    // wrapper with zero height, which Playwright counts as invisible.
     const el = page.locator('[data-block]');
-    await el.waitFor({ timeout: 15_000 });
+    await el.waitFor({ state: 'attached', timeout: 15_000 });
     // Async blocks stream in after load and images change the layout: wait for every
     // image in the block to settle, then for the block's height to hold still.
     await Promise.race([
@@ -59,7 +61,10 @@ try {
       stable = next && box && Math.abs(next.height - box.height) < 1 ? stable + 1 : 0;
       box = next;
     }
-    const clip = { x: 0, y: Math.max(0, box.y), width: WIDTH, height: Math.min(MAX_H, Math.ceil(box.height)) };
+    // A wrapper under 40 px tall means the block draws outside normal flow: take the viewport.
+    const clip = box && box.height >= 40
+      ? { x: 0, y: Math.max(0, box.y), width: WIDTH, height: Math.min(MAX_H, Math.ceil(box.height)) }
+      : { x: 0, y: 0, width: WIDTH, height: HEIGHT };
     await page.screenshot({ path: out, clip, fullPage: true });
     console.log(`✓ ${id} → blocks/${id}/thumb.png (${clip.width}×${clip.height})`);
   }
