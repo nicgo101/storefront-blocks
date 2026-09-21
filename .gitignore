@@ -1,0 +1,7 @@
+node_modules/
+showcase/.next/
+showcase/next-env.d.ts
+showcase/src/generated/
+.playwright-thumbs/
+*.log
+.DS_Store
