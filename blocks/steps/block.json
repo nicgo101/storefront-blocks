@@ -1,0 +1,17 @@
+{
+  "id": "steps",
+  "version": 1,
+  "name": "Så funkar det",
+  "category": "content",
+  "tier": "generic",
+  "summary": "Tre eller fyra numrerade steg med rubrik och en mening var. Sida vid sida på dator, under varandra på mobil.",
+  "files": [{ "path": "steps.tsx", "target": "src/components/blocks/steps.tsx" }],
+  "uses": { "ui": [], "packages": [], "site": [] },
+  "props": [
+    { "name": "title", "type": "string", "default": "Så funkar det" },
+    { "name": "text", "type": "string" },
+    { "name": "steps", "type": "{ title: string; text: string }[]", "required": true },
+    { "name": "layout", "type": "'row' | 'list'", "default": "row" }
+  ],
+  "thumbnail": "thumb.png"
+}

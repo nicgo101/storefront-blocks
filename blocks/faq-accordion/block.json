@@ -1,0 +1,18 @@
+{
+  "id": "faq-accordion",
+  "version": 1,
+  "name": "Vanliga frågor",
+  "category": "content",
+  "tier": "generic",
+  "summary": "Frågor och svar som fälls ut en i taget. Rubrik och intro är valfria.",
+  "files": [{ "path": "faq-accordion.tsx", "target": "src/components/blocks/faq-accordion.tsx" }],
+  "uses": { "ui": ["accordion"], "packages": [], "site": [] },
+  "props": [
+    { "name": "title", "type": "string | null", "default": "Vanliga frågor" },
+    { "name": "text", "type": "string" },
+    { "name": "items", "type": "{ q: string; a: string }[]", "required": true },
+    { "name": "type", "type": "'single' | 'multiple'", "default": "single" },
+    { "name": "width", "type": "'narrow' | 'wide'", "default": "narrow" }
+  ],
+  "thumbnail": "thumb.png"
+}

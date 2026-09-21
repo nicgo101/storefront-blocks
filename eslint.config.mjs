@@ -30,7 +30,8 @@ export default tseslint.config(
     rules: {
       'no-restricted-imports': ['error', {
         patterns: [{
-          group: ['*', ...ALLOWED_IN_BLOCKS.map((p) => '!' + p), '!./*', '!../*'],
+          // A regex, not a gitignore group: `*` + `!next/*` cannot re-include under gitignore rules.
+          regex: '^(?!react$|react/|next/|@/components/ui/|@/lib/utils$|lucide-react$|embla-carousel-react$|@nicgo101/storefront-commerce/|@/components/commerce/(product-card|product-carousel)$|\\./|\\.\\./).*',
           message: `A block may import only: ${ALLOWED_IN_BLOCKS.join(', ')} (README.md §Block rules).`,
         }],
       }],

@@ -1,0 +1,17 @@
+{
+  "id": "cta-band",
+  "version": 1,
+  "name": "Uppmaningsband",
+  "category": "content",
+  "tier": "generic",
+  "summary": "Ett band tvärs över sidan med rubrik, en rad text och en knapp. Bra före sidfoten eller mellan två sektioner.",
+  "files": [{ "path": "cta-band.tsx", "target": "src/components/blocks/cta-band.tsx" }],
+  "uses": { "ui": ["button"], "packages": ["next"], "site": [] },
+  "props": [
+    { "name": "title", "type": "string", "required": true },
+    { "name": "text", "type": "string" },
+    { "name": "button", "type": "{ label: string; href: string }", "required": true },
+    { "name": "tone", "type": "'primary' | 'muted'", "default": "primary" }
+  ],
+  "thumbnail": "thumb.png"
+}

@@ -1,5 +1,270 @@
 {
-  "version": "dev",
-  "builtAt": "2026-09-21T13:43:53.515Z",
-  "blocks": []
+  "version": "abe7e0d",
+  "builtAt": "2026-09-21T13:50:18.930Z",
+  "blocks": [
+    {
+      "id": "cta-band",
+      "version": 1,
+      "name": "Uppmaningsband",
+      "category": "content",
+      "tier": "generic",
+      "summary": "Ett band tvärs över sidan med rubrik, en rad text och en knapp. Bra före sidfoten eller mellan två sektioner.",
+      "files": [
+        {
+          "path": "cta-band.tsx",
+          "target": "src/components/blocks/cta-band.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [
+          "button"
+        ],
+        "packages": [
+          "next"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "button",
+          "type": "{ label: string; href: string }",
+          "required": true
+        },
+        {
+          "name": "tone",
+          "type": "'primary' | 'muted'",
+          "default": "primary"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/cta-band"
+    },
+    {
+      "id": "faq-accordion",
+      "version": 1,
+      "name": "Vanliga frågor",
+      "category": "content",
+      "tier": "generic",
+      "summary": "Frågor och svar som fälls ut en i taget. Rubrik och intro är valfria.",
+      "files": [
+        {
+          "path": "faq-accordion.tsx",
+          "target": "src/components/blocks/faq-accordion.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [
+          "accordion"
+        ],
+        "packages": [],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string | null",
+          "default": "Vanliga frågor"
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "items",
+          "type": "{ q: string; a: string }[]",
+          "required": true
+        },
+        {
+          "name": "type",
+          "type": "'single' | 'multiple'",
+          "default": "single"
+        },
+        {
+          "name": "width",
+          "type": "'narrow' | 'wide'",
+          "default": "narrow"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/faq-accordion"
+    },
+    {
+      "id": "hero-image",
+      "version": 1,
+      "name": "Hero med bild",
+      "category": "hero",
+      "tier": "generic",
+      "summary": "Stor rubrik, en kort text, en eller två knappar och en bild. Text till vänster och bild till höger, eller text centrerad över bilden.",
+      "files": [
+        {
+          "path": "hero-image.tsx",
+          "target": "src/components/blocks/hero-image.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [
+          "button"
+        ],
+        "packages": [
+          "next"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "image",
+          "type": "{ src: string; alt: string; width: number; height: number }",
+          "required": true
+        },
+        {
+          "name": "primary",
+          "type": "{ label: string; href: string }",
+          "required": true
+        },
+        {
+          "name": "secondary",
+          "type": "{ label: string; href: string }"
+        },
+        {
+          "name": "layout",
+          "type": "'split' | 'centered'",
+          "default": "split"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/hero-image"
+    },
+    {
+      "id": "stats-row",
+      "version": 1,
+      "name": "Siffror i rad",
+      "category": "social-proof",
+      "tier": "generic",
+      "summary": "Två till fyra stora siffror med en kort etikett under: antal kunder, betyg, leveranstid.",
+      "files": [
+        {
+          "path": "stats-row.tsx",
+          "target": "src/components/blocks/stats-row.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "stats",
+          "type": "{ value: string; label: string }[]",
+          "required": true
+        },
+        {
+          "name": "variant",
+          "type": "'plain' | 'card'",
+          "default": "plain"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/stats-row"
+    },
+    {
+      "id": "steps",
+      "version": 1,
+      "name": "Så funkar det",
+      "category": "content",
+      "tier": "generic",
+      "summary": "Tre eller fyra numrerade steg med rubrik och en mening var. Sida vid sida på dator, under varandra på mobil.",
+      "files": [
+        {
+          "path": "steps.tsx",
+          "target": "src/components/blocks/steps.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "default": "Så funkar det"
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "steps",
+          "type": "{ title: string; text: string }[]",
+          "required": true
+        },
+        {
+          "name": "layout",
+          "type": "'row' | 'list'",
+          "default": "row"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/steps"
+    },
+    {
+      "id": "usp-row",
+      "version": 1,
+      "name": "USP-rad",
+      "category": "content",
+      "tier": "generic",
+      "summary": "Tre eller fyra korta löften med ikon: fri frakt, öppet köp, rådgivning, trygg betalning. Passar direkt under hero eller ovanför sidfoten.",
+      "files": [
+        {
+          "path": "usp-row.tsx",
+          "target": "src/components/blocks/usp-row.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [
+          "lucide-react"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "items",
+          "type": "{ icon: 'truck'|'shield'|'headset'|'returns'|'leaf'|'star'|'clock'|'card'|'package'|'thumbs'; title: string; text?: string }[]",
+          "required": true
+        },
+        {
+          "name": "variant",
+          "type": "'band' | 'plain'",
+          "default": "band"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/usp-row"
+    }
+  ]
 }

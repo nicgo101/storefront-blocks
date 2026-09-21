@@ -1,0 +1,16 @@
+{
+  "id": "stats-row",
+  "version": 1,
+  "name": "Siffror i rad",
+  "category": "social-proof",
+  "tier": "generic",
+  "summary": "Två till fyra stora siffror med en kort etikett under: antal kunder, betyg, leveranstid.",
+  "files": [{ "path": "stats-row.tsx", "target": "src/components/blocks/stats-row.tsx" }],
+  "uses": { "ui": [], "packages": [], "site": [] },
+  "props": [
+    { "name": "title", "type": "string" },
+    { "name": "stats", "type": "{ value: string; label: string }[]", "required": true },
+    { "name": "variant", "type": "'plain' | 'card'", "default": "plain" }
+  ],
+  "thumbnail": "thumb.png"
+}

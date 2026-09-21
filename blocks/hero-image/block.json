@@ -1,0 +1,19 @@
+{
+  "id": "hero-image",
+  "version": 1,
+  "name": "Hero med bild",
+  "category": "hero",
+  "tier": "generic",
+  "summary": "Stor rubrik, en kort text, en eller två knappar och en bild. Text till vänster och bild till höger, eller text centrerad över bilden.",
+  "files": [{ "path": "hero-image.tsx", "target": "src/components/blocks/hero-image.tsx" }],
+  "uses": { "ui": ["button"], "packages": ["next"], "site": [] },
+  "props": [
+    { "name": "title", "type": "string", "required": true },
+    { "name": "text", "type": "string" },
+    { "name": "image", "type": "{ src: string; alt: string; width: number; height: number }", "required": true },
+    { "name": "primary", "type": "{ label: string; href: string }", "required": true },
+    { "name": "secondary", "type": "{ label: string; href: string }" },
+    { "name": "layout", "type": "'split' | 'centered'", "default": "split" }
+  ],
+  "thumbnail": "thumb.png"
+}

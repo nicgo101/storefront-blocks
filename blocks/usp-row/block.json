@@ -1,0 +1,15 @@
+{
+  "id": "usp-row",
+  "version": 1,
+  "name": "USP-rad",
+  "category": "content",
+  "tier": "generic",
+  "summary": "Tre eller fyra korta löften med ikon: fri frakt, öppet köp, rådgivning, trygg betalning. Passar direkt under hero eller ovanför sidfoten.",
+  "files": [{ "path": "usp-row.tsx", "target": "src/components/blocks/usp-row.tsx" }],
+  "uses": { "ui": [], "packages": ["lucide-react"], "site": [] },
+  "props": [
+    { "name": "items", "type": "{ icon: 'truck'|'shield'|'headset'|'returns'|'leaf'|'star'|'clock'|'card'|'package'|'thumbs'; title: string; text?: string }[]", "required": true },
+    { "name": "variant", "type": "'band' | 'plain'", "default": "band" }
+  ],
+  "thumbnail": "thumb.png"
+}
