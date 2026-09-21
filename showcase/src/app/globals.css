@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* The blocks live outside the showcase; Tailwind only scans what it is told about. */
+@source "../../../blocks";
+
 @custom-variant dark (&:is(.dark *));
 
 /*

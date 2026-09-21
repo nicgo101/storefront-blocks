@@ -9,6 +9,8 @@ const mock = fileURLToPath(new URL('./src/lib/commerce-mock.ts', import.meta.url
  * block imports the real `@nicgo101/storefront-commerce/*`.
  */
 const config: NextConfig = {
+  // The storefronts run with cacheComponents; the shop blocks' 'use cache' needs it here too.
+  cacheComponents: true,
   transpilePackages: ['@nicgo101/storefront-commerce'],
   images: { remotePatterns: [{ protocol: 'https', hostname: 'picsum.photos' }] },
   turbopack: {
