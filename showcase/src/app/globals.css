@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 /* The blocks live outside the showcase; Tailwind only scans what it is told about. */
 @source "../../../blocks";

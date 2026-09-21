@@ -85,3 +85,8 @@ manifest and thumbnails to the editor, and tells the webmaster to read
   `contact-form`, `team-grid`, `video-embed`, `announcement-bar`, `cta-cards`,
   `category-tiles`, `product-spotlight`. Same smoke in gm and pv, green. The showcase's
   commerce mock now answers a product-by-slug query too.
+- 2026-09-21, third batch: 8 more (31 total, 24 generic, 7 shop): `rich-text`, `timeline`,
+  `comparison-table`, `download-list`, `feature-highlight`, `product-tabs-collections`,
+  `campaign-hero` (two files: server hero + client countdown), `footer-columns`. Lesson:
+  under cacheComponents a server component may not call `new Date()` while prerendering,
+  so the footer reads the year inside a `'use cache'` helper. Smoke in gm and pv green.

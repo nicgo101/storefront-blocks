@@ -1,0 +1,20 @@
+{
+  "id": "footer-columns",
+  "version": 1,
+  "name": "Sidfot",
+  "category": "navigation",
+  "tier": "generic",
+  "summary": "Sidfot med företagsnamn, kontaktuppgifter, sociala ikoner, två till fyra länkkolumner och en rad med villkor och copyright.",
+  "files": [{ "path": "footer-columns.tsx", "target": "src/components/blocks/footer-columns.tsx" }],
+  "uses": { "ui": [], "packages": ["next", "lucide-react"], "site": [] },
+  "props": [
+    { "name": "brand", "type": "string", "required": true },
+    { "name": "tagline", "type": "string" },
+    { "name": "columns", "type": "{ title: string; links: { label: string; href: string }[] }[]", "required": true },
+    { "name": "contact", "type": "{ address?: string[]; phone?: string; email?: string }" },
+    { "name": "social", "type": "{ network: 'facebook'|'instagram'|'linkedin'|'youtube'|'tiktok'; href: string }[]" },
+    { "name": "legal", "type": "{ label: string; href: string }[]" },
+    { "name": "copyright", "type": "string", "default": "© {year} {brand}" }
+  ],
+  "thumbnail": "thumb.png"
+}

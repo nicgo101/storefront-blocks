@@ -1,0 +1,20 @@
+{
+  "id": "feature-highlight",
+  "version": 1,
+  "name": "Det här får du",
+  "category": "content",
+  "tier": "generic",
+  "summary": "En stor bild med rubrik, text och tre till fem punkter med ikon bredvid, plus en knapp. För att sälja in en tjänst eller ett erbjudande.",
+  "files": [{ "path": "feature-highlight.tsx", "target": "src/components/blocks/feature-highlight.tsx" }],
+  "uses": { "ui": ["button"], "packages": ["next", "lucide-react"], "site": [] },
+  "props": [
+    { "name": "eyebrow", "type": "string" },
+    { "name": "title", "type": "string", "required": true },
+    { "name": "text", "type": "string" },
+    { "name": "image", "type": "{ src: string; alt: string; width: number; height: number }", "required": true },
+    { "name": "features", "type": "{ icon?: 'check'|'truck'|'shield'|'headset'|'returns'|'leaf'|'star'|'clock'|'wrench'|'package'; title: string; text?: string }[]", "required": true },
+    { "name": "cta", "type": "{ label: string; href: string }" },
+    { "name": "imageSide", "type": "'left' | 'right'", "default": "left" }
+  ],
+  "thumbnail": "thumb.png"
+}

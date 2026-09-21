@@ -1,0 +1,17 @@
+{
+  "id": "timeline",
+  "version": 1,
+  "name": "Tidslinje",
+  "category": "content",
+  "tier": "generic",
+  "summary": "Händelser längs en lodrät linje med årtal eller steg, rubrik, text och valfri bild. För företagets historia eller en process.",
+  "files": [{ "path": "timeline.tsx", "target": "src/components/blocks/timeline.tsx" }],
+  "uses": { "ui": [], "packages": ["next"], "site": [] },
+  "props": [
+    { "name": "title", "type": "string | null", "default": null },
+    { "name": "text", "type": "string" },
+    { "name": "items", "type": "{ label: string; title: string; text?: string; image?: { src: string; alt: string; width: number; height: number } }[]", "required": true },
+    { "name": "layout", "type": "'line' | 'alternate'", "default": "line" }
+  ],
+  "thumbnail": "thumb.png"
+}

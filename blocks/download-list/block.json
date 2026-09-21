@@ -1,0 +1,17 @@
+{
+  "id": "download-list",
+  "version": 1,
+  "name": "Dokument att ladda ner",
+  "category": "content",
+  "tier": "generic",
+  "summary": "Lista med filer som manualer, prislistor och blanketter, med ikon efter filtyp, storlek och beskrivning.",
+  "files": [{ "path": "download-list.tsx", "target": "src/components/blocks/download-list.tsx" }],
+  "uses": { "ui": [], "packages": ["lucide-react"], "site": [] },
+  "props": [
+    { "name": "title", "type": "string | null", "default": "Dokument" },
+    { "name": "text", "type": "string" },
+    { "name": "files", "type": "{ title: string; href: string; description?: string; size?: string; type?: string }[]", "required": true },
+    { "name": "layout", "type": "'list' | 'grid'", "default": "list" }
+  ],
+  "thumbnail": "thumb.png"
+}

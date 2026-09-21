@@ -1,6 +1,6 @@
 {
-  "version": "c8dc83a",
-  "builtAt": "2026-09-21T15:16:36.329Z",
+  "version": "d58d4b2",
+  "builtAt": "2026-09-21T17:53:35.251Z",
   "blocks": [
     {
       "id": "announcement-bar",
@@ -51,6 +51,74 @@
       ],
       "thumbnail": "thumb.png",
       "dir": "blocks/announcement-bar"
+    },
+    {
+      "id": "campaign-hero",
+      "version": 1,
+      "name": "Kampanjhero",
+      "category": "hero",
+      "tier": "shop",
+      "summary": "Hero för en kampanj med namn och bild från butikens kampanjkategori, knapp till kampanjen och valfri nedräkning som försvinner när kampanjen är slut.",
+      "files": [
+        {
+          "path": "campaign-hero.tsx",
+          "target": "src/components/blocks/campaign-hero.tsx"
+        },
+        {
+          "path": "campaign-countdown.tsx",
+          "target": "src/components/blocks/campaign-countdown.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [
+          "button"
+        ],
+        "packages": [
+          "@nicgo101/storefront-commerce",
+          "next"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "slug",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "eyebrow",
+          "type": "string",
+          "default": "Kampanj"
+        },
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "image",
+          "type": "{ src: string; alt: string; width: number; height: number }"
+        },
+        {
+          "name": "buttonLabel",
+          "type": "string",
+          "default": "Se kampanjen"
+        },
+        {
+          "name": "endsAt",
+          "type": "string (ISO date-time)"
+        },
+        {
+          "name": "tone",
+          "type": "'dark' | 'light'",
+          "default": "dark"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/campaign-hero"
     },
     {
       "id": "category-tiles",
@@ -155,6 +223,58 @@
       ],
       "thumbnail": "thumb.png",
       "dir": "blocks/collection-banner"
+    },
+    {
+      "id": "comparison-table",
+      "version": 1,
+      "name": "Jämförelsetabell",
+      "category": "content",
+      "tier": "generic",
+      "summary": "Tabell som jämför paket eller modeller rad för rad med bock, kryss eller text. En kolumn kan framhävas och få en knapp.",
+      "files": [
+        {
+          "path": "comparison-table.tsx",
+          "target": "src/components/blocks/comparison-table.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [
+          "button"
+        ],
+        "packages": [
+          "next",
+          "lucide-react"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string | null",
+          "default": null
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "columns",
+          "type": "{ name: string; price?: string; cta?: { label: string; href: string }; highlighted?: boolean }[]",
+          "required": true
+        },
+        {
+          "name": "rows",
+          "type": "{ label: string; values: (boolean | string)[] }[]",
+          "required": true
+        },
+        {
+          "name": "rowHeader",
+          "type": "string",
+          "default": ""
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/comparison-table"
     },
     {
       "id": "contact-form",
@@ -361,6 +481,50 @@
       "dir": "blocks/cta-cards"
     },
     {
+      "id": "download-list",
+      "version": 1,
+      "name": "Dokument att ladda ner",
+      "category": "content",
+      "tier": "generic",
+      "summary": "Lista med filer som manualer, prislistor och blanketter, med ikon efter filtyp, storlek och beskrivning.",
+      "files": [
+        {
+          "path": "download-list.tsx",
+          "target": "src/components/blocks/download-list.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [
+          "lucide-react"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string | null",
+          "default": "Dokument"
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "files",
+          "type": "{ title: string; href: string; description?: string; size?: string; type?: string }[]",
+          "required": true
+        },
+        {
+          "name": "layout",
+          "type": "'list' | 'grid'",
+          "default": "list"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/download-list"
+    },
+    {
       "id": "faq-accordion",
       "version": 1,
       "name": "Vanliga frågor",
@@ -408,6 +572,123 @@
       ],
       "thumbnail": "thumb.png",
       "dir": "blocks/faq-accordion"
+    },
+    {
+      "id": "feature-highlight",
+      "version": 1,
+      "name": "Det här får du",
+      "category": "content",
+      "tier": "generic",
+      "summary": "En stor bild med rubrik, text och tre till fem punkter med ikon bredvid, plus en knapp. För att sälja in en tjänst eller ett erbjudande.",
+      "files": [
+        {
+          "path": "feature-highlight.tsx",
+          "target": "src/components/blocks/feature-highlight.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [
+          "button"
+        ],
+        "packages": [
+          "next",
+          "lucide-react"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "eyebrow",
+          "type": "string"
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "image",
+          "type": "{ src: string; alt: string; width: number; height: number }",
+          "required": true
+        },
+        {
+          "name": "features",
+          "type": "{ icon?: 'check'|'truck'|'shield'|'headset'|'returns'|'leaf'|'star'|'clock'|'wrench'|'package'; title: string; text?: string }[]",
+          "required": true
+        },
+        {
+          "name": "cta",
+          "type": "{ label: string; href: string }"
+        },
+        {
+          "name": "imageSide",
+          "type": "'left' | 'right'",
+          "default": "left"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/feature-highlight"
+    },
+    {
+      "id": "footer-columns",
+      "version": 1,
+      "name": "Sidfot",
+      "category": "navigation",
+      "tier": "generic",
+      "summary": "Sidfot med företagsnamn, kontaktuppgifter, sociala ikoner, två till fyra länkkolumner och en rad med villkor och copyright.",
+      "files": [
+        {
+          "path": "footer-columns.tsx",
+          "target": "src/components/blocks/footer-columns.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [
+          "next",
+          "lucide-react"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "brand",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "tagline",
+          "type": "string"
+        },
+        {
+          "name": "columns",
+          "type": "{ title: string; links: { label: string; href: string }[] }[]",
+          "required": true
+        },
+        {
+          "name": "contact",
+          "type": "{ address?: string[]; phone?: string; email?: string }"
+        },
+        {
+          "name": "social",
+          "type": "{ network: 'facebook'|'instagram'|'linkedin'|'youtube'|'tiktok'; href: string }[]"
+        },
+        {
+          "name": "legal",
+          "type": "{ label: string; href: string }[]"
+        },
+        {
+          "name": "copyright",
+          "type": "string",
+          "default": "© {year} {brand}"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/footer-columns"
     },
     {
       "id": "gallery-lightbox",
@@ -856,6 +1137,113 @@
       "dir": "blocks/product-spotlight"
     },
     {
+      "id": "product-tabs-collections",
+      "version": 1,
+      "name": "Produktflikar",
+      "category": "commerce",
+      "tier": "shop",
+      "summary": "Flikar som Nyheter, Rea och Bästsäljare med ett produktrutnät under varje. Varje flik är en kategori i butiken.",
+      "files": [
+        {
+          "path": "product-tabs-collections.tsx",
+          "target": "src/components/blocks/product-tabs-collections.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [
+          "tabs",
+          "button"
+        ],
+        "packages": [
+          "@nicgo101/storefront-commerce",
+          "next"
+        ],
+        "site": [
+          "@/components/commerce/product-card"
+        ]
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string | null",
+          "default": null
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "tabs",
+          "type": "{ label: string; slug: string }[]",
+          "required": true
+        },
+        {
+          "name": "take",
+          "type": "number",
+          "default": 8
+        },
+        {
+          "name": "moreLabel",
+          "type": "string | null",
+          "default": "Visa alla"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/product-tabs-collections"
+    },
+    {
+      "id": "rich-text",
+      "version": 1,
+      "name": "Brödtext",
+      "category": "content",
+      "tier": "generic",
+      "summary": "Löpande text med rubriker, listor, citat och länkar i sajtens typografi. Grunden för om oss, villkor och guider.",
+      "files": [
+        {
+          "path": "rich-text.tsx",
+          "target": "src/components/blocks/rich-text.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [
+          "@tailwindcss/typography"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string | null",
+          "default": null
+        },
+        {
+          "name": "eyebrow",
+          "type": "string"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode"
+        },
+        {
+          "name": "html",
+          "type": "string"
+        },
+        {
+          "name": "width",
+          "type": "'narrow' | 'wide'",
+          "default": "narrow"
+        },
+        {
+          "name": "size",
+          "type": "'base' | 'lg'",
+          "default": "base"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/rich-text"
+    },
+    {
       "id": "stats-row",
       "version": 1,
       "name": "Siffror i rad",
@@ -1021,6 +1409,50 @@
       ],
       "thumbnail": "thumb.png",
       "dir": "blocks/testimonials"
+    },
+    {
+      "id": "timeline",
+      "version": 1,
+      "name": "Tidslinje",
+      "category": "content",
+      "tier": "generic",
+      "summary": "Händelser längs en lodrät linje med årtal eller steg, rubrik, text och valfri bild. För företagets historia eller en process.",
+      "files": [
+        {
+          "path": "timeline.tsx",
+          "target": "src/components/blocks/timeline.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [
+          "next"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string | null",
+          "default": null
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "items",
+          "type": "{ label: string; title: string; text?: string; image?: { src: string; alt: string; width: number; height: number } }[]",
+          "required": true
+        },
+        {
+          "name": "layout",
+          "type": "'line' | 'alternate'",
+          "default": "line"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/timeline"
     },
     {
       "id": "usp-row",

@@ -1,0 +1,19 @@
+{
+  "id": "rich-text",
+  "version": 1,
+  "name": "Brödtext",
+  "category": "content",
+  "tier": "generic",
+  "summary": "Löpande text med rubriker, listor, citat och länkar i sajtens typografi. Grunden för om oss, villkor och guider.",
+  "files": [{ "path": "rich-text.tsx", "target": "src/components/blocks/rich-text.tsx" }],
+  "uses": { "ui": [], "packages": ["@tailwindcss/typography"], "site": [] },
+  "props": [
+    { "name": "title", "type": "string | null", "default": null },
+    { "name": "eyebrow", "type": "string" },
+    { "name": "children", "type": "ReactNode" },
+    { "name": "html", "type": "string" },
+    { "name": "width", "type": "'narrow' | 'wide'", "default": "narrow" },
+    { "name": "size", "type": "'base' | 'lg'", "default": "base" }
+  ],
+  "thumbnail": "thumb.png"
+}

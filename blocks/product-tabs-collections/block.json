@@ -1,0 +1,18 @@
+{
+  "id": "product-tabs-collections",
+  "version": 1,
+  "name": "Produktflikar",
+  "category": "commerce",
+  "tier": "shop",
+  "summary": "Flikar som Nyheter, Rea och Bästsäljare med ett produktrutnät under varje. Varje flik är en kategori i butiken.",
+  "files": [{ "path": "product-tabs-collections.tsx", "target": "src/components/blocks/product-tabs-collections.tsx" }],
+  "uses": { "ui": ["tabs", "button"], "packages": ["@nicgo101/storefront-commerce", "next"], "site": ["@/components/commerce/product-card"] },
+  "props": [
+    { "name": "title", "type": "string | null", "default": null },
+    { "name": "text", "type": "string" },
+    { "name": "tabs", "type": "{ label: string; slug: string }[]", "required": true },
+    { "name": "take", "type": "number", "default": 8 },
+    { "name": "moreLabel", "type": "string | null", "default": "Visa alla" }
+  ],
+  "thumbnail": "thumb.png"
+}

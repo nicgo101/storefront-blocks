@@ -1,0 +1,18 @@
+{
+  "id": "comparison-table",
+  "version": 1,
+  "name": "Jämförelsetabell",
+  "category": "content",
+  "tier": "generic",
+  "summary": "Tabell som jämför paket eller modeller rad för rad med bock, kryss eller text. En kolumn kan framhävas och få en knapp.",
+  "files": [{ "path": "comparison-table.tsx", "target": "src/components/blocks/comparison-table.tsx" }],
+  "uses": { "ui": ["button"], "packages": ["next", "lucide-react"], "site": [] },
+  "props": [
+    { "name": "title", "type": "string | null", "default": null },
+    { "name": "text", "type": "string" },
+    { "name": "columns", "type": "{ name: string; price?: string; cta?: { label: string; href: string }; highlighted?: boolean }[]", "required": true },
+    { "name": "rows", "type": "{ label: string; values: (boolean | string)[] }[]", "required": true },
+    { "name": "rowHeader", "type": "string", "default": "" }
+  ],
+  "thumbnail": "thumb.png"
+}

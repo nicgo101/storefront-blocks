@@ -1,0 +1,24 @@
+{
+  "id": "campaign-hero",
+  "version": 1,
+  "name": "Kampanjhero",
+  "category": "hero",
+  "tier": "shop",
+  "summary": "Hero för en kampanj med namn och bild från butikens kampanjkategori, knapp till kampanjen och valfri nedräkning som försvinner när kampanjen är slut.",
+  "files": [
+    { "path": "campaign-hero.tsx", "target": "src/components/blocks/campaign-hero.tsx" },
+    { "path": "campaign-countdown.tsx", "target": "src/components/blocks/campaign-countdown.tsx" }
+  ],
+  "uses": { "ui": ["button"], "packages": ["@nicgo101/storefront-commerce", "next"], "site": [] },
+  "props": [
+    { "name": "slug", "type": "string", "required": true },
+    { "name": "eyebrow", "type": "string", "default": "Kampanj" },
+    { "name": "title", "type": "string" },
+    { "name": "text", "type": "string" },
+    { "name": "image", "type": "{ src: string; alt: string; width: number; height: number }" },
+    { "name": "buttonLabel", "type": "string", "default": "Se kampanjen" },
+    { "name": "endsAt", "type": "string (ISO date-time)" },
+    { "name": "tone", "type": "'dark' | 'light'", "default": "dark" }
+  ],
+  "thumbnail": "thumb.png"
+}
