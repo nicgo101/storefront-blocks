@@ -1,7 +1,106 @@
 {
-  "version": "19181df",
-  "builtAt": "2026-09-21T14:26:50.104Z",
+  "version": "c8dc83a",
+  "builtAt": "2026-09-21T15:16:36.329Z",
   "blocks": [
+    {
+      "id": "announcement-bar",
+      "version": 1,
+      "name": "Informationsrad",
+      "category": "navigation",
+      "tier": "generic",
+      "summary": "En smal rad högst upp på sidan med ett kort meddelande och valfri länk, till exempel fri frakt eller ändrade öppettider. Besökaren kan stänga den.",
+      "files": [
+        {
+          "path": "announcement-bar.tsx",
+          "target": "src/components/blocks/announcement-bar.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [
+          "next",
+          "lucide-react"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "text",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "link",
+          "type": "{ label: string; href: string }"
+        },
+        {
+          "name": "dismissible",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "default": "default"
+        },
+        {
+          "name": "tone",
+          "type": "'primary' | 'muted'",
+          "default": "primary"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/announcement-bar"
+    },
+    {
+      "id": "category-tiles",
+      "version": 1,
+      "name": "Kategorirutnät",
+      "category": "commerce",
+      "tier": "shop",
+      "summary": "Rutor med bild och namn för butikens kategorier, hämtade från butiken. Välj vilka och i vilken ordning, eller visa alla toppkategorier.",
+      "files": [
+        {
+          "path": "category-tiles.tsx",
+          "target": "src/components/blocks/category-tiles.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [
+          "@nicgo101/storefront-commerce",
+          "next"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string | null",
+          "default": null
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "slugs",
+          "type": "string[]"
+        },
+        {
+          "name": "columns",
+          "type": "2 | 3 | 4",
+          "default": 3
+        },
+        {
+          "name": "style",
+          "type": "'overlay' | 'below'",
+          "default": "overlay"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/category-tiles"
+    },
     {
       "id": "collection-banner",
       "version": 1,
@@ -56,6 +155,67 @@
       ],
       "thumbnail": "thumb.png",
       "dir": "blocks/collection-banner"
+    },
+    {
+      "id": "contact-form",
+      "version": 1,
+      "name": "Kontaktformulär",
+      "category": "contact",
+      "tier": "generic",
+      "summary": "Namn, e-post, telefon och meddelande med skicka-knapp och tack-text. Kopplas till sajtens formulärfunktion.",
+      "files": [
+        {
+          "path": "contact-form.tsx",
+          "target": "src/components/blocks/contact-form.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [
+          "button",
+          "input",
+          "label",
+          "textarea"
+        ],
+        "packages": [],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "default": "Kontakta oss"
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "action",
+          "type": "(formData: FormData) => Promise<{ ok: boolean; message?: string }>",
+          "required": true
+        },
+        {
+          "name": "fields",
+          "type": "('name'|'email'|'phone'|'subject'|'message')[]",
+          "default": "['name','email','phone','message']"
+        },
+        {
+          "name": "buttonLabel",
+          "type": "string",
+          "default": "Skicka"
+        },
+        {
+          "name": "consentText",
+          "type": "string"
+        },
+        {
+          "name": "variant",
+          "type": "'card' | 'plain'",
+          "default": "card"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/contact-form"
     },
     {
       "id": "contact-map",
@@ -157,6 +317,48 @@
       ],
       "thumbnail": "thumb.png",
       "dir": "blocks/cta-band"
+    },
+    {
+      "id": "cta-cards",
+      "version": 1,
+      "name": "Ingångskort",
+      "category": "navigation",
+      "tier": "generic",
+      "summary": "Två till fyra klickbara kort med ikon eller bild, rubrik och en kort text. Vägvisare till viktiga sidor: verkstad, guider, kontakt.",
+      "files": [
+        {
+          "path": "cta-cards.tsx",
+          "target": "src/components/blocks/cta-cards.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [
+          "card"
+        ],
+        "packages": [
+          "next",
+          "lucide-react"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string | null",
+          "default": null
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "cards",
+          "type": "{ title: string; text: string; href: string; icon?: 'wrench'|'truck'|'headset'|'book'|'tag'|'leaf'|'star'|'package'; image?: { src: string; alt: string; width: number; height: number }; linkLabel?: string }[]",
+          "required": true
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/cta-cards"
     },
     {
       "id": "faq-accordion",
@@ -310,6 +512,48 @@
       ],
       "thumbnail": "thumb.png",
       "dir": "blocks/hero-image"
+    },
+    {
+      "id": "image-text",
+      "version": 1,
+      "name": "Bild och text i sicksack",
+      "category": "content",
+      "tier": "generic",
+      "summary": "Rader med bild på ena sidan och rubrik, text och valfri knapp på den andra. Bilden byter sida för varje rad.",
+      "files": [
+        {
+          "path": "image-text.tsx",
+          "target": "src/components/blocks/image-text.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [
+          "button"
+        ],
+        "packages": [
+          "next"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string | null",
+          "default": null
+        },
+        {
+          "name": "items",
+          "type": "{ title: string; text: string; image: { src: string; alt: string; width: number; height: number }; cta?: { label: string; href: string } }[]",
+          "required": true
+        },
+        {
+          "name": "start",
+          "type": "'image-left' | 'image-right'",
+          "default": "image-left"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/image-text"
     },
     {
       "id": "logo-band",
@@ -553,6 +797,65 @@
       "dir": "blocks/product-grid-collection"
     },
     {
+      "id": "product-spotlight",
+      "version": 1,
+      "name": "Produkt i fokus",
+      "category": "commerce",
+      "tier": "shop",
+      "summary": "En produkt stort på startsidan eller en kampanjsida: bild, namn, pris från butiken och en knapp till produktsidan. Egen säljtext för just den här platsen.",
+      "files": [
+        {
+          "path": "product-spotlight.tsx",
+          "target": "src/components/blocks/product-spotlight.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [
+          "button"
+        ],
+        "packages": [
+          "@nicgo101/storefront-commerce",
+          "next"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "slug",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "eyebrow",
+          "type": "string"
+        },
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "image",
+          "type": "{ src: string; alt: string; width: number; height: number }"
+        },
+        {
+          "name": "buttonLabel",
+          "type": "string",
+          "default": "Till produkten"
+        },
+        {
+          "name": "imageSide",
+          "type": "'left' | 'right'",
+          "default": "left"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/product-spotlight"
+    },
+    {
       "id": "stats-row",
       "version": 1,
       "name": "Siffror i rad",
@@ -632,6 +935,51 @@
       "dir": "blocks/steps"
     },
     {
+      "id": "team-grid",
+      "version": 1,
+      "name": "Medarbetare",
+      "category": "content",
+      "tier": "generic",
+      "summary": "Rutnät med bild, namn och roll för varje person, med valfri e-post och telefon.",
+      "files": [
+        {
+          "path": "team-grid.tsx",
+          "target": "src/components/blocks/team-grid.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [
+          "next",
+          "lucide-react"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string | null",
+          "default": "Vi som jobbar här"
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "members",
+          "type": "{ name: string; role: string; image?: { src: string; alt?: string; width: number; height: number }; email?: string; phone?: string }[]",
+          "required": true
+        },
+        {
+          "name": "columns",
+          "type": "2 | 3 | 4",
+          "default": 3
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/team-grid"
+    },
+    {
       "id": "testimonials",
       "version": 1,
       "name": "Kundomdömen",
@@ -708,6 +1056,65 @@
       ],
       "thumbnail": "thumb.png",
       "dir": "blocks/usp-row"
+    },
+    {
+      "id": "video-embed",
+      "version": 1,
+      "name": "Video från YouTube eller Vimeo",
+      "category": "media",
+      "tier": "generic",
+      "summary": "En inbäddad video som laddas först när besökaren klickar på play. Inga kakor från videotjänsten innan dess.",
+      "files": [
+        {
+          "path": "video-embed.tsx",
+          "target": "src/components/blocks/video-embed.tsx"
+        }
+      ],
+      "uses": {
+        "ui": [],
+        "packages": [
+          "next",
+          "lucide-react"
+        ],
+        "site": []
+      },
+      "props": [
+        {
+          "name": "title",
+          "type": "string | null",
+          "default": null
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "provider",
+          "type": "'youtube' | 'vimeo'",
+          "required": true
+        },
+        {
+          "name": "videoId",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "videoTitle",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "poster",
+          "type": "{ src: string; alt: string; width: number; height: number }"
+        },
+        {
+          "name": "width",
+          "type": "'narrow' | 'wide'",
+          "default": "wide"
+        }
+      ],
+      "thumbnail": "thumb.png",
+      "dir": "blocks/video-embed"
     }
   ]
 }

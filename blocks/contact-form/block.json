@@ -1,0 +1,20 @@
+{
+  "id": "contact-form",
+  "version": 1,
+  "name": "Kontaktformulär",
+  "category": "contact",
+  "tier": "generic",
+  "summary": "Namn, e-post, telefon och meddelande med skicka-knapp och tack-text. Kopplas till sajtens formulärfunktion.",
+  "files": [{ "path": "contact-form.tsx", "target": "src/components/blocks/contact-form.tsx" }],
+  "uses": { "ui": ["button", "input", "label", "textarea"], "packages": [], "site": [] },
+  "props": [
+    { "name": "title", "type": "string", "default": "Kontakta oss" },
+    { "name": "text", "type": "string" },
+    { "name": "action", "type": "(formData: FormData) => Promise<{ ok: boolean; message?: string }>", "required": true },
+    { "name": "fields", "type": "('name'|'email'|'phone'|'subject'|'message')[]", "default": "['name','email','phone','message']" },
+    { "name": "buttonLabel", "type": "string", "default": "Skicka" },
+    { "name": "consentText", "type": "string" },
+    { "name": "variant", "type": "'card' | 'plain'", "default": "card" }
+  ],
+  "thumbnail": "thumb.png"
+}

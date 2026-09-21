@@ -38,8 +38,16 @@ export function mockProducts(take = 8): MockSearchItem[] {
   }));
 }
 
-/** `query(document, variables)` → `{ data }` shaped like the real client's answer. */
-export async function query(_document: unknown, variables?: { input?: { take?: number } }) {
+/**
+ * `query(document, variables)` → `{ data }` shaped like the real client's answer.
+ * The document is opaque here; the variables say which query it is: `slug` = a
+ * product by slug, otherwise a search.
+ */
+export async function query(_document: unknown, variables?: { input?: { take?: number }; slug?: string }) {
+  if (variables && typeof variables.slug === 'string') {
+    if (variables.slug === 'finns-inte') return { data: { product: null } };
+    return { data: { product: { id: '100', name: 'Trädgårdsslang 25 m', slug: variables.slug, featuredAsset: { preview: 'https://picsum.photos/seed/spotlight/1200/900' }, variants: [{ priceWithTax: 49900, currencyCode: 'SEK' }, { priceWithTax: 79900, currencyCode: 'SEK' }] } } };
+  }
   const take = variables?.input?.take ?? 8;
   const items = mockProducts(take);
   return { data: { search: { items, totalItems: items.length } } };

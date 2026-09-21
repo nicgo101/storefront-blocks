@@ -80,4 +80,8 @@ manifest and thumbnails to the editor, and tells the webmaster to read
   `check-design` green in both. Two things that differed between sites and shaped the
   blocks: `ProductCard` takes only `product` (pv has no `index`), and `ProductCarousel`'s
   `variant` values differ (va `inverted`, gm/pv `chalkboard`), so the blocks pass neither.
-  Engine side (mount, routes, prompt, glass drawer) is the next step in the plan.
+  Engine side (mount, routes, prompt, glass drawer) landed the same day.
+- 2026-09-21, second batch: 8 more blocks (23 total, 18 generic, 5 shop): `image-text`,
+  `contact-form`, `team-grid`, `video-embed`, `announcement-bar`, `cta-cards`,
+  `category-tiles`, `product-spotlight`. Same smoke in gm and pv, green. The showcase's
+  commerce mock now answers a product-by-slug query too.

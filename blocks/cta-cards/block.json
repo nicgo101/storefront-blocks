@@ -1,0 +1,16 @@
+{
+  "id": "cta-cards",
+  "version": 1,
+  "name": "Ingångskort",
+  "category": "navigation",
+  "tier": "generic",
+  "summary": "Två till fyra klickbara kort med ikon eller bild, rubrik och en kort text. Vägvisare till viktiga sidor: verkstad, guider, kontakt.",
+  "files": [{ "path": "cta-cards.tsx", "target": "src/components/blocks/cta-cards.tsx" }],
+  "uses": { "ui": ["card"], "packages": ["next", "lucide-react"], "site": [] },
+  "props": [
+    { "name": "title", "type": "string | null", "default": null },
+    { "name": "text", "type": "string" },
+    { "name": "cards", "type": "{ title: string; text: string; href: string; icon?: 'wrench'|'truck'|'headset'|'book'|'tag'|'leaf'|'star'|'package'; image?: { src: string; alt: string; width: number; height: number }; linkLabel?: string }[]", "required": true }
+  ],
+  "thumbnail": "thumb.png"
+}

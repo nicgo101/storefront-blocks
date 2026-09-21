@@ -1,0 +1,16 @@
+{
+  "id": "image-text",
+  "version": 1,
+  "name": "Bild och text i sicksack",
+  "category": "content",
+  "tier": "generic",
+  "summary": "Rader med bild på ena sidan och rubrik, text och valfri knapp på den andra. Bilden byter sida för varje rad.",
+  "files": [{ "path": "image-text.tsx", "target": "src/components/blocks/image-text.tsx" }],
+  "uses": { "ui": ["button"], "packages": ["next"], "site": [] },
+  "props": [
+    { "name": "title", "type": "string | null", "default": null },
+    { "name": "items", "type": "{ title: string; text: string; image: { src: string; alt: string; width: number; height: number }; cta?: { label: string; href: string } }[]", "required": true },
+    { "name": "start", "type": "'image-left' | 'image-right'", "default": "image-left" }
+  ],
+  "thumbnail": "thumb.png"
+}

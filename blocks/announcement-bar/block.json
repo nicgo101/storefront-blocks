@@ -1,0 +1,18 @@
+{
+  "id": "announcement-bar",
+  "version": 1,
+  "name": "Informationsrad",
+  "category": "navigation",
+  "tier": "generic",
+  "summary": "En smal rad högst upp på sidan med ett kort meddelande och valfri länk, till exempel fri frakt eller ändrade öppettider. Besökaren kan stänga den.",
+  "files": [{ "path": "announcement-bar.tsx", "target": "src/components/blocks/announcement-bar.tsx" }],
+  "uses": { "ui": [], "packages": ["next", "lucide-react"], "site": [] },
+  "props": [
+    { "name": "text", "type": "string", "required": true },
+    { "name": "link", "type": "{ label: string; href: string }" },
+    { "name": "dismissible", "type": "boolean", "default": true },
+    { "name": "id", "type": "string", "default": "default" },
+    { "name": "tone", "type": "'primary' | 'muted'", "default": "primary" }
+  ],
+  "thumbnail": "thumb.png"
+}

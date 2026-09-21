@@ -1,0 +1,18 @@
+{
+  "id": "category-tiles",
+  "version": 1,
+  "name": "Kategorirutnät",
+  "category": "commerce",
+  "tier": "shop",
+  "summary": "Rutor med bild och namn för butikens kategorier, hämtade från butiken. Välj vilka och i vilken ordning, eller visa alla toppkategorier.",
+  "files": [{ "path": "category-tiles.tsx", "target": "src/components/blocks/category-tiles.tsx" }],
+  "uses": { "ui": [], "packages": ["@nicgo101/storefront-commerce", "next"], "site": [] },
+  "props": [
+    { "name": "title", "type": "string | null", "default": null },
+    { "name": "text", "type": "string" },
+    { "name": "slugs", "type": "string[]" },
+    { "name": "columns", "type": "2 | 3 | 4", "default": 3 },
+    { "name": "style", "type": "'overlay' | 'below'", "default": "overlay" }
+  ],
+  "thumbnail": "thumb.png"
+}

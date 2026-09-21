@@ -1,0 +1,17 @@
+{
+  "id": "team-grid",
+  "version": 1,
+  "name": "Medarbetare",
+  "category": "content",
+  "tier": "generic",
+  "summary": "Rutnät med bild, namn och roll för varje person, med valfri e-post och telefon.",
+  "files": [{ "path": "team-grid.tsx", "target": "src/components/blocks/team-grid.tsx" }],
+  "uses": { "ui": [], "packages": ["next", "lucide-react"], "site": [] },
+  "props": [
+    { "name": "title", "type": "string | null", "default": "Vi som jobbar här" },
+    { "name": "text", "type": "string" },
+    { "name": "members", "type": "{ name: string; role: string; image?: { src: string; alt?: string; width: number; height: number }; email?: string; phone?: string }[]", "required": true },
+    { "name": "columns", "type": "2 | 3 | 4", "default": 3 }
+  ],
+  "thumbnail": "thumb.png"
+}
